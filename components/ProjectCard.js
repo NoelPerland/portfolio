@@ -1,19 +1,25 @@
 export default function ProjectCard({ project }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-      <img
-        src={project.image || "https://via.placeholder.com/400x200"}
-        alt={project.title}
-        className="w-full h-48 object-cover"
-      />
+      {/* Image container with centered content */}
+      <div className="flex justify-center items-center w-full h-60 overflow-hidden rounded-t-lg">
+        <img
+          src={project.image || ""}
+          alt={project.title}
+          className="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-violet-500">
+          {project.title}
+        </h3>
         <p className="text-gray-600 mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tech.map((tech, index) => (
             <span
               key={index}
-              className="bg-gray-200 px-3 py-1 rounded-full text-sm"
+              className="bg-gray-200 text-gray-600 px-3 py-1 rounded-full text-sm"
             >
               {tech}
             </span>

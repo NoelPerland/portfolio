@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="container mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8">Contact Me</h2>
         <div className="space-y-4 text-lg">
-          <p>Email: noel.perland@gmail.com</p>
+          <p>Email: noel.perland@gmail.com </p>
           <p>Phone: +46762633790</p>
         </div>
         <a
