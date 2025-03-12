@@ -28,7 +28,7 @@ export default function TechSkills() {
     <section className="py-10 bg-gray-50">
       <div className="container mx-auto px-6 text-center">
         <div className="container mx-auto text-center">
-          <h2 className="text-lg font-semibold text-gray-800 mb-4">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
             Tech Skills
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
