@@ -2,6 +2,8 @@
 
 A portfolio with two working AI applications and a separate [browser game hub](https://noelperland.github.io/noels-game-hub/).
 
+The homepage preserves the original Liivo portfolio’s layout, typography, colors, portrait, CV, experience, skills, contact links, and theme switch. Only the Work collection changes to emphasize useful AI tools and collect the games behind one hub card. Its static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the original styles so the existing application routes keep their own interface. `app/original-theme.tsx` adds the theme interaction and tolerates disabled browser storage.
+
 ## Reply Desk
 
 `/projects/support-desk` — Turn a support request into a priority, category, explanation, reply draft, and next steps. Review and edit the output, track Open / Reviewed / Done status, revisit saved tickets, export Markdown, or delete a ticket.
