@@ -297,3 +297,13 @@ html[data-theme="dark"] .original-portfolio .theme-toggle .moon-icon{display:blo
   .original-portfolio *, .original-portfolio *::before, .original-portfolio *::after{transition:none;animation:none;}
   .original-portfolio .work:hover .frame{transform:none;}
 }
+.original-portfolio .work .desc a{color:var(--accent);font-weight:600;text-underline-offset:3px;}
+.case-study{min-height:100vh;background:var(--bg);color:var(--ink);padding:clamp(30px,7vw,90px) max(24px,calc((100vw - 760px)/2));font-family:"Bricolage Grotesque",sans-serif;line-height:1.55;}
+.case-study .back,.case-study .case-links a{color:var(--accent);font-weight:600;text-underline-offset:4px;}
+.case-study .eyebrow{margin-top:60px;text-transform:uppercase;letter-spacing:.12em;color:var(--mute);font-size:12px;}
+.case-study h1{font-size:clamp(42px,8vw,76px);line-height:1;margin:12px 0 20px;}
+.case-study .lead{font-size:clamp(20px,3vw,28px);}
+.case-study h2{font-size:22px;margin:42px 0 8px;}
+.case-study .case-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:44px;}
+.case-study .case-note{font-size:13px;color:var(--mute);margin-top:70px;}
+.original-portfolio .more-work{margin:40px 0 18px;font-size:20px;}
