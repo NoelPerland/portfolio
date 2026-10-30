@@ -307,3 +307,5 @@ html[data-theme="dark"] .original-portfolio .theme-toggle .moon-icon{display:blo
 .case-study .case-links{display:flex;gap:24px;flex-wrap:wrap;margin-top:44px;}
 .case-study .case-note{font-size:13px;color:var(--mute);margin-top:70px;}
 .original-portfolio .more-work{margin:40px 0 18px;font-size:20px;}
+.original-portfolio .hero h1 .headline-outcome{display:block;max-width:760px;margin-top:14px;font-size:clamp(28px,4.6vw,60px);line-height:1.08;letter-spacing:-.035em;}
+.original-portfolio .hero h1 .headline-outcome .word{display:block;}

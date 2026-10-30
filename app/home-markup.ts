@@ -27,9 +27,9 @@ export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to con
 <header class="hero">
   <div class="wrap">
     <div class="status"><span class="dot"></span>Stockholm, Sweden</div>
-    <h1 aria-label="Full-stack developer AI builder">
-      <span class="line"><span class="word word-a">Full-stack</span> <span class="pill">developer</span></span><br>
-      <span class="line"><span class="word word-b">AI builder.</span></span>
+    <h1 aria-label="Full-stack developer. Turning ideas into working products.">
+      <span class="line"><span class="word word-a">Full-stack</span> <span class="pill">developer.</span></span><br>
+      <span class="line headline-outcome"><span class="word word-b">Turning ideas into working products.</span></span>
     </h1>
     <p class="tagline">I build shipped React/TypeScript projects, Node.js/API-backed tools, AI workflows, and browser games. I am strongest in the space between idea and working product: user flow, data shape, debugging, deployment, and iteration.</p>
     <div class="row">
