@@ -1,5 +1,5 @@
 // Static markup preserved from Noel’s original public portfolio.
-export const homeMarkup = `<nav>
+export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to content</a><nav>
   <div class="bar">
     <div class="brand">Noel <b>Perland</b></div>
     <ul>
@@ -23,7 +23,7 @@ export const homeMarkup = `<nav>
   </div>
 </nav>
 
-<main>
+<main id="main-content" tabindex="-1">
 <header class="hero">
   <div class="wrap">
     <div class="status"><span class="dot"></span>Stockholm, Sweden</div>

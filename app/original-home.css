@@ -288,3 +288,12 @@ html[data-theme="dark"] .original-portfolio .theme-toggle .moon-icon{display:blo
 .original-portfolio .project-preview p{font-size:15px;line-height:1.5;}
 .original-portfolio .dispatch-preview{background:#faf7f0;color:#292b2c;}
 .original-portfolio .journal-preview{background:#f5efd9;color:#23394c;}
+
+.original-portfolio .skip-link{position:fixed;top:8px;left:16px;z-index:1000;padding:10px 16px;background:var(--ink);color:var(--bg);border-radius:12px;transform:translateY(-150%);}
+.original-portfolio .skip-link:focus{transform:none;}
+.original-portfolio a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+@media (prefers-reduced-motion: reduce){
+  html:has(.original-portfolio){scroll-behavior:auto;}
+  .original-portfolio *, .original-portfolio *::before, .original-portfolio *::after{transition:none;animation:none;}
+  .original-portfolio .work:hover .frame{transform:none;}
+}

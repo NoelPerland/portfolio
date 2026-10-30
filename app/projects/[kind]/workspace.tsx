@@ -51,16 +51,18 @@ export default function Workspace({ kind }: { kind: Kind }) {
       active = false;
     };
   }, [kind]);
+  const hasUnsavedWork = dirty || (!current && source.trim().length > 0);
   useEffect(() => {
-    if (!dirty) return;
+    if (!hasUnsavedWork) return;
     const warn = (event: BeforeUnloadEvent) => {
       event.preventDefault();
+      event.returnValue = "";
     };
     window.addEventListener("beforeunload", warn);
     return () => window.removeEventListener("beforeunload", warn);
-  }, [dirty]);
+  }, [hasUnsavedWork]);
   function mayLeave() {
-    return !dirty || window.confirm("Discard your unsaved edits?");
+    return !hasUnsavedWork || window.confirm("Discard your unsaved edits?");
   }
   function select(record: RecordItem | null) {
     if (!mayLeave()) return;

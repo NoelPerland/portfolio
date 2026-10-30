@@ -94,3 +94,11 @@ The original Liivo page is a separate deployment; GitHub changes alone do not up
 ## Development note
 
 Built with AI-assisted implementation, iteration, testing, and deployment checks. Example messages and notes are fictional. Portrait, CV, contact details, and experience come from Noel's existing public portfolio. No customer counts, business results, or testimonials are invented.
+
+## Portable browser regression
+
+Run `npm run build`, then `npm run test:browser` using Node24. The test starts/stops its own local production server and uses installed Google Chrome. Set `CHROME_PATH` to another Chromium executable when Chrome is not installed in its usual location. `playwright-core` is a development dependency; no browser download or credentials are required.
+
+Checks cover blocked browser storage, nonempty/empty draft leave warnings, failed generation preserving exact input and enabling retry. Portfolio also checks canceled discard. API responses are mocked; this does not verify live AI, database isolation, real account login, session renewal, email delivery, or physical devices. Registration remains disabled pending real confirmation-email verification.
+
+The regression also checks rejection of foreign-origin mutations. Standalone checks cover guest auth status, disabled registration and guest logout with backend credentials cleared. Real account login, refresh, isolation and email delivery remain release checklist items requiring authorized test accounts.
