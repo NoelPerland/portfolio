@@ -1,6 +1,37 @@
 # Noel Perland — Full-stack portfolio
 
-A portfolio with two working AI applications and a separate [browser game hub](https://noelperland.github.io/noels-game-hub/).
+A portfolio featuring two standalone AI applications and a separate [browser game hub](https://noelperland.github.io/noels-game-hub/).
+
+**Public portfolio:** https://portfolio-eta-amber-97.vercel.app/ · **Source branch:** `master` · **AI handoff:** [AGENTS.md](AGENTS.md)
+
+## Continue on another device
+
+Use Git and Node.js24:
+
+```sh
+git clone https://github.com/NoelPerland/portfolio.git
+cd portfolio
+npm ci
+npm run dev
+```
+
+The homepage works without secrets. For the legacy AI routes, copy `.env.example` to `.env.local` and configure server variables from your authorized hosting account. Never copy secrets into Git or chat. Run `npm test`, `npm run typecheck` and `npm run build` before release.
+
+## Connected projects
+
+| Project | Live app | Source |
+| --- | --- | --- |
+| Reply Desk | [Open app](https://support-desk-ai-noel-perlands-projects.vercel.app/) | [support-desk-ai](https://github.com/NoelPerland/support-desk-ai) |
+| Minute to Action | [Open app](https://minute-to-action-noel-perlands-projects.vercel.app/) | [minute-to-action](https://github.com/NoelPerland/minute-to-action) |
+| Game Hub | [Play games](https://noelperland.github.io/noels-game-hub/) | [noels-game-hub](https://github.com/NoelPerland/noels-game-hub) |
+
+Clone a product's repository separately to develop it. Each AI app has its own Next.js deployment, README, `.env.example`, tests and database schema notes. Portfolio cards link out to them. The embedded routes described below remain for compatibility with previous saved work.
+
+## Verification and remaining work
+
+As of 30 October 2026, standalone guest flows passed real AI generation, saved edits/reload, status changes, Markdown/CSV exports as applicable, separate-browser isolation, rejected foreign-origin mutations and phone layouts. The apps share a bounded Supabase quota ledger. Existing-account login has not been tested with credentials; registration is disabled until confirmation email delivery is tested. No payments, automatic sending or recording is included.
+
+The homepage has production-build, desktop/phone/rotation, theme persistence, CV and legacy-route checks. Physical-device coverage remains limited. The original Liivo URL is independently hosted; the Vercel URL above is the maintained release.
 
 The homepage preserves the original Liivo portfolio’s layout, typography, colors, portrait, CV, experience, skills, contact links, and theme switch. Only the Work collection changes to emphasize useful AI tools and collect the games behind one hub card. Its static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the original styles so the existing application routes keep their own interface. `app/original-theme.tsx` adds the theme interaction and tolerates disabled browser storage.
 
@@ -21,7 +52,7 @@ Both call a real model. Missing credentials, provider failures, and invalid resp
 - `/api/records` validates requests and model output. Credentials stay server-side.
 - Groq Chat Completions with `openai/gpt-oss-20b`, bounded input, and a timeout.
 - Supabase PostgreSQL for records and an atomic generation-quota ledger.
-- Two domain workflows share persistence and request validation; no service-role key or second deployment is needed.
+- Legacy embedded workflows share persistence and request validation; no service-role key is used. Featured standalone products have their own deployments.
 
 Start with `lib/domain.ts`, `lib/server.ts`, `app/api/records/route.ts`, and `app/projects/[kind]/workspace.tsx`.
 
