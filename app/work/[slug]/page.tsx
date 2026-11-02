@@ -4,6 +4,15 @@ import OriginalTheme from "../../original-theme";
 import "../../original-home.css";
 
 const projects = {
+  "studio-booking": {
+    title: "Forma Studio",
+    goal: "Make appointment booking clear, while keeping the schedule consistent when customers book at the same time.",
+    architecture: "Next.js and TypeScript provide the booking flow and server API. Supabase Postgres stores appointments. Guest capability cookies restrict customers to their own records; a signed staff session unlocks schedule management.",
+    decision: "Availability is checked for the chosen service duration in Stockholm time. A database exclusion constraint prevents overlapping appointments for the same staff member across browsers. Public availability exposes busy times without contact details.",
+    evidence: "Tests exercise simultaneous requests, customer isolation, cancellation and staff access. This is a fictional studio demo: no emails, payments or real appointments are sent.",
+    live: "https://studio-booking-gules.vercel.app/",
+    code: "https://github.com/NoelPerland/studio-booking",
+  },
   "reply-desk": {
     title: "Reply Desk",
     goal: "Turn a customer request into a reviewed reply and trackable next step.",
