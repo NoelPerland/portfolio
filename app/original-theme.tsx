@@ -28,7 +28,15 @@ export default function OriginalTheme() {
     const changeTheme = () =>
       setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
     toggle?.addEventListener("click", changeTheme);
-    return () => toggle?.removeEventListener("click", changeTheme);
+    const targets = document.querySelectorAll<HTMLElement>(".original-portfolio .work");
+    const reveal = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? null : new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        reveal?.unobserve(entry.target);
+      }
+    }, { threshold: 0.08 });
+    targets.forEach(target => { if (reveal) { target.classList.add("reveal-ready"); reveal.observe(target); } });
+    return () => { toggle?.removeEventListener("click", changeTheme); reveal?.disconnect(); };
   }, []);
 
   return null;

@@ -1,166 +1,21 @@
-// Static markup preserved from Noel’s original public portfolio.
-export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to content</a><nav>
-  <div class="bar">
-    <div class="brand">Noel <b>Perland</b></div>
-    <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#xp">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#about">About</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme">
-        <svg class="sun-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-          <path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-        <svg class="moon-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true">
-          <path d="M20 15.3A8 8 0 0 1 8.7 4a7 7 0 1 0 11.3 11.3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <a href="#contact" class="status"><span class="dot"></span>Contact</a>
-    </div>
-  </div>
-</nav>
-
+export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><div class="bar">
+  <a class="brand" href="#top">Noel <b>Perland</b></a>
+  <div class="nav-links"><a href="#work">Work</a><a href="#about">About</a><a href="#xp">Experience</a></div>
+  <div class="nav-actions"><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><svg class="sun-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="moon-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" aria-hidden="true"><path d="M20 15.3A8 8 0 0 1 8.7 4a7 7 0 1 0 11.3 11.3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></button><a class="nav-contact" href="#contact">Let’s talk <span aria-hidden="true">↗</span></a></div>
+</div></nav>
 <main id="main-content" tabindex="-1">
-<header class="hero">
-  <div class="wrap">
-    <div class="status"><span class="dot"></span>Stockholm, Sweden</div>
-    <h1 aria-label="Full-stack developer. Turning ideas into working products.">
-      <span class="line"><span class="word word-a">Full-stack</span> <span class="pill">developer.</span></span><br>
-      <span class="line headline-outcome"><span class="word word-b">Turning ideas into working products.</span></span>
-    </h1>
-    <p class="tagline">I build shipped React/TypeScript projects, Node.js/API-backed tools, AI workflows, and browser games. I am strongest in the space between idea and working product: user flow, data shape, debugging, deployment, and iteration.</p>
-    <div class="row">
-      <a href="#work" class="btn btn-dark">See my work &rarr;</a>
-      <a href="/noel-perland-cv.pdf" class="btn btn-ghost" download>Download CV &darr;</a>
-    </div>
-  </div>
-</header>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head"><h2>About</h2></div>
-    <div class="about">
-      <div class="photo">
-        <img src="/noel-portrait.jpg" alt="Noel Perland portrait in an autumn park">
-      </div>
-      <div class="body">
-        <p>Hi, I'm Noel. I work across <b>frontend, backend, AI workflows, deployment, and content systems</b>. I am building the kind of junior portfolio that proves range: live products, code links, shipped experiments, and enough debugging experience to be useful quickly.</p>
-        <div class="currently">
-          <div class="item"><span class="k">Focus</span><span class="v">Full-stack roles and practical AI tools</span></div>
-          <div class="item"><span class="k">Building</span><span class="v">Web tools + browser games</span></div>
-          <div class="item"><span class="k">Learning</span><span class="v">AI workflows + evaluation</span></div>
-          <div class="item"><span class="k">Based</span><span class="v">Stockholm, Sweden</span></div>
-          <div class="item"><span class="k">Education</span><span class="v">Chas Academy + Nackademin</span></div>
-          <div class="item"><span class="k">Other</span><span class="v">WordPress, support, documentation</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="work">
-  <div class="wrap">
-    <div class="sec-head"><h2>Work</h2></div>
-    <div class="works">
-<article class="work"><div class="frame"><img src="/studio-booking.png" alt="Forma Studio booking calendar and appointment form" loading="lazy"><div class="quick"><a href="https://studio-booking-gules.vercel.app/">Open app &nearr;</a><a href="https://github.com/NoelPerland/studio-booking" target="_blank" rel="noreferrer">Code &nearr;</a></div></div><div class="meta"><h3>Forma Studio</h3><span class="yr">2026</span></div><p class="desc">A full-stack appointment app with live availability, customer cancellations and protected staff scheduling. Postgres prevents overlapping bookings, even under simultaneous requests. <a href="/work/studio-booking">Engineering notes &rarr;</a></p><div class="tools"><span>Next.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Supabase</span></div></article>
-<article class="work"><div class="frame"><img src="/minute-to-action.png" alt="Minute to Action standalone meeting journal" loading="lazy"><div class="quick"><a href="https://minute-to-action-noel-perlands-projects.vercel.app/">Open app &nearr;</a><a href="https://github.com/NoelPerland/minute-to-action" target="_blank" rel="noreferrer">Code &nearr;</a></div></div><div class="meta"><h3>Minute to Action</h3><span class="yr">2026</span></div><p class="desc">Meeting notes become editable decisions and action lists. Unknown owners and dates stay unassigned; exports preserve edits. <a href="/work/minute-to-action">Engineering notes &rarr;</a></p><div class="tools"><span>Next.js</span><span>TypeScript</span><span>Groq</span><span>Supabase</span></div></article>
-<article class="work"><div class="frame"><img src="/game-hub.png" alt="Noel’s browser game collection" loading="lazy"><div class="quick"><a href="https://noelperland.github.io/noels-game-hub/" target="_blank" rel="noreferrer">Play games &nearr;</a><a href="https://github.com/NoelPerland/noels-game-hub" target="_blank" rel="noreferrer">Code &nearr;</a></div></div><div class="meta"><h3>Noel’s Game Hub</h3><span class="yr">2026</span></div><p class="desc">Nine playable browser games in one hub. Each game has its own source and release; input, progression and save behavior have repeatable checks. <a href="/work/game-hub">Engineering notes &rarr;</a></p><div class="tools"><span>Phaser</span><span>Three.js</span><span>Unity</span></div></article>
-</div><h3 class="more-work">More projects</h3><div class="works">
-<article class="work"><div class="frame"><img src="/calorie-tracker.png" alt="Calorie Tracker sign-in screen" loading="lazy"><div class="quick"><a href="https://noelperland.github.io/calorie-tracker/" target="_blank" rel="noreferrer">Open app &nearr;</a><a href="https://github.com/NoelPerland/calorie-tracker" target="_blank" rel="noreferrer">Code &nearr;</a></div></div><div class="meta"><h3>Calorie Tracker</h3><span class="yr">2026</span></div><p class="desc">Personal nutrition tracker for daily calories, macros and meal history. Log meals through ChatGPT, food photos or barcode scans. Account required.</p><div class="tools"><span>React</span><span>TypeScript</span><span>Supabase</span></div></article>
-<article class="work">
-        <div class="frame"><img src="/gamepulse.png" alt="GamePulse analytics dashboard with player metrics" loading="lazy"><div class="quick"><a href="https://github.com/NoelPerland/gamepulse#run" target="_blank" rel="noreferrer">Run locally &nearr;</a><a href="https://github.com/NoelPerland/gamepulse" target="_blank" rel="noreferrer">Code &nearr;</a></div></div>
-        <div class="meta"><h3>GamePulse</h3><span class="yr">2026</span></div>
-        <p class="desc">A game analytics and LiveOps demo with real-time event ingestion, player metrics and versioned remote configuration. Its sample data is fictional; public hosting is still pending.</p>
-        <div class="tools"><span>Next.js</span><span>PostgreSQL</span><span>WebSockets</span><span>Unity</span></div>
-      </article>
-<article class="work">
-        <div class="frame"><img src="/startup-postmortem-analyzer.png" alt="Startup Postmortem Analyzer screenshot"><div class="quick"><a href="https://185b55bb05.apps.osaas.io" target="_blank" rel="noreferrer">Visit &nearr;</a><a href="https://github.com/NoelPerland/startup-postmortem-analyzer" target="_blank" rel="noreferrer">Code &nearr;</a></div></div>
-        <div class="meta"><h3>Startup Postmortem Analyzer</h3><span class="yr">2026</span></div>
-        <p class="desc">Editorial draft workflow for startup analysis. Public build uses curated Demo Mode samples, with timeline, open questions and PDF export.</p>
-        <div class="tools"><span>AI</span><span>Node.js</span><span>Structured output</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="xp">
-  <div class="wrap">
-    <div class="sec-head"><h2>Experience</h2></div>
-    <div class="xp">
-      <div class="row">
-        <div class="yr">Nov 2025 - May 2026</div>
-        <div class="role">Full-stack / AI Architect Intern <span>- AI integration, deployment, open-source web tooling</span></div>
-        <div class="place">Eyevinn Technology</div>
-      </div>
-      <div class="row">
-        <div class="yr">Oct 2023 - Apr 2024</div>
-        <div class="role">Frontend Developer Intern <span>- client websites, CMS, design handoff</span></div>
-        <div class="place">Red Capes</div>
-      </div>
-      <div class="row">
-        <div class="yr">Mar 2019 - present</div>
-        <div class="role">IT Consultant <span>- support, permissions, cloud server maintenance, troubleshooting</span></div>
-        <div class="place">Randstad</div>
-      </div>
-      <div class="row">
-        <div class="yr">2022 - present</div>
-        <div class="role">Frontend + full-stack studies <span>- React, Node.js, TypeScript, accessibility, CI/CD</span></div>
-        <div class="place">Chas Academy / Nackademin</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="wrap">
-    <div class="sec-head"><h2>Skills</h2></div>
-    <div class="skills">
-      <div class="group">
-        <h4>Frontend</h4>
-        <div class="pills"><span class="pill">React</span><span class="pill">Next.js</span><span class="pill">TypeScript</span><span class="pill">JavaScript</span><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">Accessibility</span></div>
-      </div>
-      <div class="group">
-        <h4>Backend</h4>
-        <div class="pills"><span class="pill">Node.js</span><span class="pill">APIs</span><span class="pill">SQL</span><span class="pill">MongoDB</span><span class="pill">Auth basics</span><span class="pill">Deployment</span></div>
-      </div>
-      <div class="group">
-        <h4>AI</h4>
-        <div class="pills"><span class="pill">LLM workflows</span><span class="pill">Prompt design</span><span class="pill">Automation</span><span class="pill">Evaluation mindset</span></div>
-      </div>
-      <div class="group">
-        <h4>Other</h4>
-        <div class="pills"><span class="pill">WordPress</span><span class="pill">Debugging</span><span class="pill">Documentation</span><span class="pill">Git</span><span class="pill">IT support</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<header class="hero" id="top"><div class="wrap"><p class="hero-intro">Noel Perland <span>·</span> Full-stack developer in Stockholm</p><h1>I build <em>useful</em><br>things. Then make<br>them <span>better.</span></h1><div class="hero-foot"><p>From the first sketch to the working product: clear interfaces, thoughtful engineering, and the persistence to ship.</p><div class="hero-actions"><a class="btn btn-dark" href="#work">Explore the work <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="/noel-perland-cv.pdf" download>Download CV <span aria-hidden="true">↓</span></a></div></div></div></header>
+<section id="work" class="work-section" aria-labelledby="work-title"><div class="wrap"><div class="section-heading"><h2 id="work-title">Selected <em>work.</em></h2><p>Products with a purpose, made to be used.</p></div><div class="works">
+<article class="work forma"><a class="project-stage" href="https://studio-booking-gules.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Forma Studio"><img src="/studio-booking.png" alt="Forma Studio’s coral booking experience" loading="lazy"></a><div class="project-info"><div><h3>Forma Studio</h3><p>Creative sessions, booked in a few clear steps.</p></div><div class="project-links"><a href="https://studio-booking-gules.vercel.app/" target="_blank" rel="noreferrer">Visit site ↗</a><a href="/work/studio-booking">The build ↗</a></div></div></article>
+<article class="work gamepulse"><a class="project-stage" href="https://github.com/NoelPerland/gamepulse" target="_blank" rel="noreferrer" aria-label="View GamePulse source"><img src="/gamepulse.png" alt="GamePulse player telemetry dashboard" loading="lazy"></a><div class="project-info"><div><h3>GamePulse</h3><p>Game telemetry and remote configuration in one console.</p></div><div class="project-links"><a href="https://github.com/NoelPerland/gamepulse" target="_blank" rel="noreferrer">View source ↗</a></div></div></article>
+<article class="work minute"><a class="project-stage" href="https://minute-to-action.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Minute to Action"><img src="/minute-to-action.png" alt="Minute to Action’s editorial notes-to-actions demo" loading="lazy"></a><div class="project-info"><div><h3>Minute to Action</h3><p>Meeting notes become decisions and next steps.</p></div><div class="project-links"><a href="https://minute-to-action.vercel.app/" target="_blank" rel="noreferrer">Visit site ↗</a><a href="/work/minute-to-action">The build ↗</a></div></div></article>
+<article class="work startup"><a class="project-stage" href="https://185b55bb05.apps.osaas.io" target="_blank" rel="noreferrer" aria-label="Visit Startup Analyzer"><img src="/startup-postmortem-analyzer.png" alt="Startup Analyzer editorial research interface" loading="lazy"></a><div class="project-info"><div><h3>Startup Analyzer</h3><p>Research drafts with a timeline, open questions, and PDF export.</p></div><div class="project-links"><a href="https://185b55bb05.apps.osaas.io" target="_blank" rel="noreferrer">Visit site ↗</a><a href="https://github.com/NoelPerland/startup-postmortem-analyzer" target="_blank" rel="noreferrer">View source ↗</a></div></div></article>
+<article class="work gamehub"><a class="project-stage" href="https://noelperland.github.io/noels-game-hub/" target="_blank" rel="noreferrer" aria-label="Play GameHub"><img src="/game-hub.png" alt="GameHub’s neon arcade launcher" loading="lazy"></a><div class="project-info"><div><h3>GameHub</h3><p>Nine browser games, each ready to play.</p></div><div class="project-links"><a href="https://noelperland.github.io/noels-game-hub/" target="_blank" rel="noreferrer">Play games ↗</a><a href="/work/game-hub">The build ↗</a></div></div></article>
+<article class="work calorie"><a class="project-stage" href="https://noelperland.github.io/calorie-tracker/" target="_blank" rel="noreferrer" aria-label="Visit Calorie Tracker"><img src="/calorie-tracker.png" alt="Calorie Tracker’s dark green nutrition interface" loading="lazy"></a><div class="project-info"><div><h3>Calorie Tracker</h3><p>Food, workouts, and progress in one personal log.</p></div><div class="project-links"><a href="https://noelperland.github.io/calorie-tracker/" target="_blank" rel="noreferrer">Visit app ↗</a></div></div></article>
+</div></div></section>
+<section id="about" class="portfolio-about" aria-labelledby="about-title"><div class="wrap about"><div class="about-photo"><img src="/noel-portrait.jpg" alt="Noel Perland portrait in an autumn park" loading="lazy"></div><div class="about-copy"><h2 id="about-title">Curious by nature.<br><em>Practical by choice.</em></h2><p>I work across frontend, backend, and AI workflows. My favorite part is finding the shape of a useful product, building it, and staying with it until the details feel right.</p><a href="mailto:noel.perland@gmail.com">Get in touch ↗</a></div></div></section>
+<section id="xp" class="experience-section" aria-labelledby="experience-title"><div class="wrap"><div class="section-heading"><h2 id="experience-title">Experience.</h2></div><div class="experience-list"><div class="experience-row"><span>2025–2026</span><h3>Full-stack / AI Architect Intern</h3><p>Eyevinn Technology</p></div><div class="experience-row"><span>2023–2024</span><h3>Frontend Developer Intern</h3><p>Red Capes</p></div><div class="experience-row"><span>2019–present</span><h3>IT Consultant</h3><p>Randstad</p></div><div class="experience-row"><span>2022–present</span><h3>Full-stack studies</h3><p>Chas Academy / Nackademin</p></div></div></div></section>
+<section id="skills" class="skills-section" aria-labelledby="skills-title"><div class="wrap"><div class="section-heading"><h2 id="skills-title">What I work with.</h2></div><div class="skills-grid"><div><h3>Interfaces</h3><p>React · Next.js · TypeScript · CSS · Accessibility</p></div><div><h3>Systems</h3><p>Node.js · APIs · SQL · Supabase · Deployment</p></div><div><h3>Beyond code</h3><p>AI workflows · Evaluation · Documentation · Support</p></div></div></div></section>
 </main>
-<footer id="contact">
-  <div class="wrap">
-    <div class="contact">
-      <h3>Want to <em>work together?</em></h3>
-      <p>Ask about a project, collaboration, or role. Quickest reply by email.</p>
-      <div class="actions">
-        <a href="mailto:noel.perland@gmail.com" class="btn btn-mail" aria-label="Email Noel">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          noel.perland@gmail.com &rarr;
-        </a>
-        <a href="https://github.com/NoelPerland" target="_blank" rel="noreferrer" class="btn btn-social" aria-label="GitHub">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.1-1.5 6.1-6.7a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.8 12.8 0 0 0-6.7 0C6.7.3 5.6.6 5.6.6a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 4.1 8c0 5.2 3.1 6.4 6.1 6.7a3.4 3.4 0 0 0-.9 2.6V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          GitHub &nearr;
-        </a>
-        <a href="https://www.linkedin.com/in/noel-perland/" target="_blank" rel="noreferrer" class="btn btn-social" aria-label="LinkedIn">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 4h.01" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-          LinkedIn &nearr;
-        </a>
-      </div>
-    </div>
-    <div class="colophon">
-      <span>&copy; 2026 Noel Perland</span>
-    </div>
-  </div>
-</footer>`;
+<footer id="contact"><div class="wrap"><div class="contact"><p>Have something in mind?</p><h2>Let’s make it <em>work.</em></h2><a href="mailto:noel.perland@gmail.com">noel.perland@gmail.com <span aria-hidden="true">↗</span></a></div><div class="footer-bottom"><span>Noel Perland © 2026</span><div><a href="https://github.com/NoelPerland" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/noel-perland/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↑</a></div></div></div></footer>`;

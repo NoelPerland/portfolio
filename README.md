@@ -2,7 +2,7 @@
 
 A portfolio featuring two standalone AI applications and a separate [browser game hub](https://noelperland.github.io/noels-game-hub/).
 
-**Public portfolio:** https://portfolio-eta-amber-97.vercel.app/ · **Source branch:** `master` · **AI handoff:** [AGENTS.md](AGENTS.md)
+**Public portfolio:** https://noelperland.vercel.app/ · **Source branch:** `master` · **AI handoff:** [AGENTS.md](AGENTS.md)
 
 ## Continue on another device
 
@@ -35,7 +35,7 @@ As of 30 October 2026, standalone guest flows passed real AI generation, saved e
 
 The homepage has production-build, desktop/phone/rotation, theme persistence, CV and legacy-route checks. Physical-device coverage remains limited. The original Liivo URL is independently hosted; the Vercel URL above is the maintained release.
 
-The homepage preserves the original Liivo portfolio’s layout, typography, colors, portrait, CV, experience, skills, contact links, and theme switch. Only the Work collection changes to emphasize useful AI tools and collect the games behind one hub card. Its static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the original styles so the existing application routes keep their own interface. `app/original-theme.tsx` adds the theme interaction and tolerates disabled browser storage.
+The homepage leads with six projects in this order: Forma Studio, GamePulse, Minute to Action, Startup Analyzer, GameHub, and Calorie Tracker. It keeps the portrait, CV, experience, skills, contact links, and theme switch. Static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the visual system so legacy application routes retain their own interface. `app/original-theme.tsx` handles theme persistence and tolerates disabled browser storage.
 
 ## Reply Desk
 

@@ -28,7 +28,7 @@ const projects = {
     architecture: "Next.js and TypeScript provide the journal and action board. Server-side model output is validated before editable records reach Supabase.",
     decision: "Unknown owners and dates remain unassigned. Only explicit dates drive overdue status. Markdown and CSV exports preserve edits; provider failures keep source notes.",
     evidence: "Output validation, action state, export and draft-recovery checks pass. Real account login and email delivery remain unverified.",
-    live: "https://minute-to-action-noel-perlands-projects.vercel.app/",
+    live: "https://minute-to-action.vercel.app/",
     code: "https://github.com/NoelPerland/minute-to-action",
   },
   "game-hub": {
@@ -54,12 +54,10 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   const project = projects[slug as Slug];
   return <><OriginalTheme /><main className="original-portfolio case-study">
     <a className="back" href="/#work">← All work</a>
-    <p className="eyebrow">Project notes · 2026</p>
     <h1>{project.title}</h1><p className="lead">{project.goal}</p>
     <h2>How it works</h2><p>{project.architecture}</p>
     <h2>Engineering decisions</h2><p>{project.decision}</p>
     <h2>Evidence and limits</h2><p>{project.evidence}</p>
     <p className="case-links"><a href={project.live}>Open live project ↗</a><a href={project.code}>Read source ↗</a></p>
-    <p className="case-note">Built with AI-assisted implementation and review. Source, tests and release history are available in the repository.</p>
   </main></>;
 }
