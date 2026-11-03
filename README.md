@@ -25,6 +25,7 @@ The homepage works without secrets. For the legacy AI routes, copy `.env.example
 | Minute to Action | [Open app](https://minute-to-action-noel-perlands-projects.vercel.app/) | [minute-to-action](https://github.com/NoelPerland/minute-to-action) |
 | Calorie Tracker | [Open app](https://noelperland.github.io/calorie-tracker/) (account required) | [calorie-tracker](https://github.com/NoelPerland/calorie-tracker) |
 | Game Hub | [Play games](https://noelperland.github.io/noels-game-hub/) | [noels-game-hub](https://github.com/NoelPerland/noels-game-hub) |
+| GamePulse | Local demo; hosting pending | [gamepulse](https://github.com/NoelPerland/gamepulse) |
 
 Clone a product's repository separately to develop it. Each AI app has its own Next.js deployment, README, `.env.example`, tests and database schema notes. Portfolio cards link out to them. The embedded routes described below remain for compatibility with previous saved work.
 

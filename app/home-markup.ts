@@ -71,10 +71,10 @@ export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to con
 </div><h3 class="more-work">More projects</h3><div class="works">
 <article class="work"><div class="frame"><img src="/calorie-tracker.png" alt="Calorie Tracker sign-in screen" loading="lazy"><div class="quick"><a href="https://noelperland.github.io/calorie-tracker/" target="_blank" rel="noreferrer">Open app &nearr;</a><a href="https://github.com/NoelPerland/calorie-tracker" target="_blank" rel="noreferrer">Code &nearr;</a></div></div><div class="meta"><h3>Calorie Tracker</h3><span class="yr">2026</span></div><p class="desc">Personal nutrition tracker for daily calories, macros and meal history. Log meals through ChatGPT, food photos or barcode scans. Account required.</p><div class="tools"><span>React</span><span>TypeScript</span><span>Supabase</span></div></article>
 <article class="work">
-        <div class="frame"><img src="/vendorflow-ai.png" alt="VendorFlow AI screenshot"><div class="quick"><a href="https://vendorflowai.apps.liivo.io" target="_blank" rel="noreferrer">Visit &nearr;</a><a href="https://github.com/NoelPerland/vendorflow-ai" target="_blank" rel="noreferrer">Code &nearr;</a></div></div>
-        <div class="meta"><h3>VendorFlow AI [WIP]</h3><span class="yr">2026</span></div>
-        <p class="desc">Work in progress: questionnaire intake, review queue, answer library and Markdown export. Payments and external sync are pending.</p>
-        <div class="tools"><span>React</span><span>Node.js</span><span>AI workflow</span><span>Product UI</span></div>
+        <div class="frame"><img src="/gamepulse.png" alt="GamePulse analytics dashboard with player metrics" loading="lazy"><div class="quick"><a href="https://github.com/NoelPerland/gamepulse#run" target="_blank" rel="noreferrer">Run locally &nearr;</a><a href="https://github.com/NoelPerland/gamepulse" target="_blank" rel="noreferrer">Code &nearr;</a></div></div>
+        <div class="meta"><h3>GamePulse</h3><span class="yr">2026</span></div>
+        <p class="desc">A game analytics and LiveOps demo with real-time event ingestion, player metrics and versioned remote configuration. Its sample data is fictional; public hosting is still pending.</p>
+        <div class="tools"><span>Next.js</span><span>PostgreSQL</span><span>WebSockets</span><span>Unity</span></div>
       </article>
 <article class="work">
         <div class="frame"><img src="/startup-postmortem-analyzer.png" alt="Startup Postmortem Analyzer screenshot"><div class="quick"><a href="https://185b55bb05.apps.osaas.io" target="_blank" rel="noreferrer">Visit &nearr;</a><a href="https://github.com/NoelPerland/startup-postmortem-analyzer" target="_blank" rel="noreferrer">Code &nearr;</a></div></div>
