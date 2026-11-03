@@ -34,7 +34,7 @@ export const homeMarkup = `<a class="skip-link" href="#main-content">Skip to con
     <p class="tagline">I build shipped React/TypeScript projects, Node.js/API-backed tools, AI workflows, and browser games. I am strongest in the space between idea and working product: user flow, data shape, debugging, deployment, and iteration.</p>
     <div class="row">
       <a href="#work" class="btn btn-dark">See my work &rarr;</a>
-      <a href="/noel-perland-cv.docx" class="btn btn-ghost" download>Download CV &darr;</a>
+      <a href="/noel-perland-cv.pdf" class="btn btn-ghost" download>Download CV &darr;</a>
     </div>
   </div>
 </header>
