@@ -47,7 +47,7 @@ export default function OriginalTheme() {
       counter!.textContent = String(index + 1).padStart(2, "0");
       announcement!.textContent = `${slides[index].querySelector("h3")?.textContent}, ${index + 1} of ${slides.length}`;
       projectIndex?.scrollTo({ left: choices[index].offsetLeft - projectIndex.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
-      if (focusWasInside) slides[index].querySelector<HTMLAnchorElement>(".project-stage")?.focus();
+      if (focusWasInside) slides[index].querySelector<HTMLAnchorElement>(".project-links a")?.focus();
       active = index;
     };
     const onChoice = (event: Event) => show(Number((event.currentTarget as HTMLButtonElement).dataset.slide));

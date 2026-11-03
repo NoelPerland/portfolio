@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Noel Perland — Full-stack developer",
   description:
-    "Practical AI tools with real backends. Explore Noel Perland’s full-stack portfolio, live applications and source code.",
+    "Noel Perland is a full-stack developer in Stockholm. Explore six projects spanning booking systems, game telemetry, AI workflows, browser games, and health tracking.",
 };
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

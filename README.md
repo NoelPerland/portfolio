@@ -35,7 +35,7 @@ As of 30 October 2026, standalone guest flows passed real AI generation, saved e
 
 The homepage has production-build, desktop/phone/rotation, theme persistence, CV and legacy-route checks. Physical-device coverage remains limited. The original Liivo URL is independently hosted; the Vercel URL above is the maintained release.
 
-The homepage features a keyboard- and swipe-accessible carousel of six projects in this order: Forma Studio, GamePulse, Minute to Action, Startup Analyzer, GameHub, and Calorie Tracker. It keeps the portrait, CV, experience, skills, contact links, and theme switch. Static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the visual system so legacy application routes retain their own interface. `app/original-theme.tsx` handles the carousel and theme persistence, including disabled browser storage.
+The homepage features a keyboard- and swipe-accessible gallery of six projects in this order: Forma Studio, GamePulse, Minute to Action, Startup Analyzer, GameHub, and Calorie Tracker. It has a monochrome personal identity that lets the product previews supply the color, with direct Live and GitHub links (source only for GamePulse). It keeps the portrait, CV, experience, skills, contact links, and theme switch. Static markup is in `app/home-markup.ts`; `app/original-home.css` scopes the visual system so legacy application routes retain their own interface. `app/original-theme.tsx` handles the gallery and theme persistence, including disabled browser storage.
 
 ## Reply Desk
 

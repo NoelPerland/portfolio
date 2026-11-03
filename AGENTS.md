@@ -3,7 +3,7 @@
 Read README.md first. This repository is Noel's portfolio, not the home of every featured product.
 
 ## Preserve the current design
-- The user requested a bolder, cleaner project-first design in November 2026. Preserve its six-project order and distinct previews unless asked to change them.
+- The portfolio uses a restrained, monochrome personal identity so the six product previews carry the color. Avoid the projects' colored italic headlines, rounded pill navigation, and tilted screenshot cards. Preserve the six-project order.
 - Homepage: `app/page.tsx`, static trusted `app/home-markup.ts`, scoped `app/original-home.css`, theme `app/original-theme.tsx`.
 - Keep portrait, CV, experience, skills and contact details. Update Work cards when a product has a verified public deployment. GamePulse has source only; do not imply a live app.
 - The two new AI products live in separate repositories linked in README. Games live behind one Game Hub card.

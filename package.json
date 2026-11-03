@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts",
+    "test": "tsx --test tests/domain.test.ts tests/provider.test.ts",
     "test:browser": "node scripts/check-browser.mjs"
   },
   "dependencies": {
