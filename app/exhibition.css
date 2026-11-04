@@ -26,14 +26,14 @@ html:has(.original-portfolio){scroll-behavior:smooth}
 html[data-theme="dark"] .original-portfolio .sun-icon{display:none}
 html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .hero{background:var(--electric);color:#21182c;border-bottom:2px solid #21182c;overflow:hidden}
-.original-portfolio .hero-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.7fr);align-items:end;gap:clamp(35px,4vw,70px);min-height:min(720px,calc(100svh - 74px));padding:clamp(60px,8vw,115px) 0 60px}
+.original-portfolio .hero-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.7fr);align-items:end;gap:clamp(35px,4vw,70px);min-height:min(620px,calc(100svh - 74px));padding:clamp(55px,7vw,85px) 0 45px}
 .original-portfolio .hero-main .eyebrow{margin:0 0 clamp(35px,5vw,85px);color:#39294a}
-.original-portfolio .hero h1{margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(70px,10.4vw,170px);font-weight:400;line-height:.85;letter-spacing:-.085em;text-transform:uppercase}
+.original-portfolio .hero h1{margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(66px,9.2vw,150px);font-weight:400;line-height:.85;letter-spacing:-.085em;text-transform:uppercase}
 .original-portfolio .hero h1 span{display:block}
 .original-portfolio .hero h1 span:first-child{color:transparent;-webkit-text-stroke:2px #21182c}
 .original-portfolio .hero h1 span:last-child{margin-left:-.07em}
 .original-portfolio .hero-aside{max-width:470px;padding-bottom:8px}
-.original-portfolio .hero-role{margin:0 0 24px;font-size:clamp(25px,2.7vw,39px);font-weight:700;line-height:1.06;letter-spacing:-.065em}
+.original-portfolio .hero-role{margin:0 0 24px;font-size:clamp(23px,2.35vw,34px);font-weight:700;line-height:1.06;letter-spacing:-.065em}
 .original-portfolio .hero-aside>p:nth-child(2){margin:0;max-width:420px;font-size:15px;line-height:1.55}
 .original-portfolio .hero-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px}
 .original-portfolio .hero-actions a{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:48px;padding:12px 16px;border:2px solid #21182c;font-size:13px;font-weight:700;transition:transform .25s,background .25s,color .25s}
@@ -41,10 +41,10 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .hero-actions a:hover{transform:translateY(-4px)}
 .original-portfolio .hero-actions a:nth-child(2):hover{background:#21182c;color:#fffaf1}
 .original-portfolio .hero-bottom{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:2px solid #21182c;color:#39294a}
-.original-portfolio .work-section{padding:clamp(70px,9vw,135px) 0 100px}
+.original-portfolio .work-section{padding:clamp(70px,8vw,105px) 0 80px}
 .original-portfolio .section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}
 .original-portfolio .section-heading .eyebrow{flex:none;margin:0 0 9px;color:var(--muted)}
-.original-portfolio .section-heading h2{max-width:1000px;margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(35px,4.1vw,68px);font-weight:400;line-height:1.02;letter-spacing:-.065em;text-transform:uppercase}
+.original-portfolio .section-heading h2{max-width:1000px;margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(32px,3.6vw,58px);font-weight:400;line-height:1.02;letter-spacing:-.065em;text-transform:uppercase}
 .original-portfolio .gallery-shell{border:2px solid var(--ink);background:var(--paper);overflow:hidden}
 .original-portfolio .carousel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:72px;padding:0 clamp(18px,2.5vw,38px);background:var(--gallery);color:var(--gallery-ink)}
 .original-portfolio .carousel-counter,.original-portfolio .gallery-label{margin:0}
@@ -57,7 +57,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .work{animation:project-enter .45s ease both}
 .original-portfolio .work[hidden]{display:none}
 @keyframes project-enter{from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:none}}
-.original-portfolio .project-stage{position:relative;display:grid;place-items:center;height:clamp(400px,51vw,680px);padding:clamp(24px,4vw,60px);background:#d4bdeb;overflow:hidden;isolation:isolate}
+.original-portfolio .project-stage{position:relative;display:grid;place-items:center;height:clamp(360px,47vw,600px);padding:clamp(24px,4vw,60px);background:#d4bdeb;overflow:hidden;isolation:isolate}
 .original-portfolio .work:nth-child(2) .project-stage{background:#b5afd3}
 .original-portfolio .work:nth-child(3) .project-stage{background:#b6c5c6}
 .original-portfolio .work:nth-child(4) .project-stage{background:#dac8ac}
@@ -70,7 +70,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .project-info{display:grid;grid-template-columns:150px minmax(0,1.45fr) minmax(240px,.8fr);grid-template-areas:"type title detail" "type title links";gap:15px 32px;padding:clamp(24px,3vw,45px);background:var(--paper);color:var(--ink)}
 .original-portfolio .project-type{grid-area:type;margin:8px 0 0;color:var(--muted)}
 .original-portfolio .project-info>div:nth-child(2){grid-area:title}
-.original-portfolio .project-info h3{margin:0 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(36px,3.8vw,61px);font-weight:400;line-height:1.02;letter-spacing:-.065em;text-transform:uppercase}
+.original-portfolio .project-info h3{margin:0 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(34px,3.4vw,52px);font-weight:400;line-height:1.02;letter-spacing:-.065em;text-transform:uppercase}
 .original-portfolio .project-summary{margin:0;max-width:560px;font-size:clamp(17px,1.6vw,22px);line-height:1.35}
 .original-portfolio .project-detail{grid-area:detail;align-self:start;margin:8px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
 .original-portfolio .project-links{grid-area:links;display:flex;flex-wrap:wrap;align-self:end;gap:10px 18px;font-size:13px;font-weight:700}
@@ -82,33 +82,45 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .project-index button span{font-family:"IBM Plex Mono",Consolas,monospace;font-size:11px}
 .original-portfolio .project-index button:hover,.original-portfolio .project-index button[aria-current="true"]{background:var(--ink);color:var(--bg)}
 .original-portfolio .project-index button:hover{padding-left:27px}
-.original-portfolio .portfolio-about{padding:clamp(80px,9vw,135px) 0;background:var(--ink);color:var(--bg)}
+.original-portfolio .portfolio-about{padding:clamp(80px,8vw,110px) 0;background:var(--ink);color:var(--bg)}
 .original-portfolio .about{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(270px,.55fr);align-items:center;gap:clamp(50px,9vw,160px)}
 .original-portfolio .about-copy .eyebrow{margin:0 0 35px;color:var(--electric)}
-.original-portfolio .about-copy h2{max-width:900px;margin:0 0 40px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(39px,5vw,80px);font-weight:400;line-height:1.04;letter-spacing:-.065em;text-transform:uppercase;color:var(--bg)}
+.original-portfolio .about-copy h2{max-width:900px;margin:0 0 40px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(37px,4.5vw,68px);font-weight:400;line-height:1.04;letter-spacing:-.065em;text-transform:uppercase;color:var(--bg)}
 .original-portfolio .about-copy>p:not(.eyebrow){max-width:680px;margin:0 0 42px;font-size:clamp(17px,1.6vw,21px);line-height:1.5}
 .original-portfolio .about-copy>a{display:inline-flex;gap:35px;border-bottom:2px solid currentColor;padding-bottom:7px;font-size:16px;font-weight:700;transition:gap .2s}
 .original-portfolio .about-copy>a:hover{gap:48px}
 .original-portfolio .about-photo{max-width:440px;transform:rotate(3deg)}
 .original-portfolio .about-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.08);border:12px solid var(--bg)}
 .original-portfolio .about-photo span{display:block;padding:15px 0;color:var(--electric)}
-.original-portfolio .experience-section{padding:clamp(75px,9vw,120px) 0}
+.original-portfolio .experience-section{padding:clamp(75px,8vw,100px) 0}
 .original-portfolio .experience-list{border-top:2px solid var(--ink)}
 .original-portfolio .experience-row{display:grid;grid-template-columns:150px 1fr 230px;align-items:baseline;gap:25px;padding:23px 0;border-bottom:1px solid var(--line)}
 .original-portfolio .experience-row span,.original-portfolio .experience-row p{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;color:var(--muted)}
 .original-portfolio .experience-row h3{margin:0;font-size:clamp(22px,2vw,30px);font-weight:600;letter-spacing:-.05em}
 .original-portfolio .experience-row p{margin:0;text-align:right}
-.original-portfolio .skills-section{padding:clamp(75px,9vw,120px) 0;background:var(--electric);color:#21182c}
-.original-portfolio .skills-section .eyebrow{color:#39294a}
-.original-portfolio .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,4vw,65px);margin-top:55px}
-.original-portfolio .skills-grid>div{border-top:2px solid #21182c;padding-top:15px}
-.original-portfolio .skills-grid span{color:#39294a}
-.original-portfolio .skills-grid h3{margin:28px 0 12px;font-size:25px;font-weight:700;letter-spacing:-.04em}
-.original-portfolio .skills-grid p{max-width:350px;margin:0;font-size:16px;line-height:1.5}
+.original-portfolio .skills-section{padding:clamp(75px,8vw,100px) 0;background:var(--electric);color:#21182c}
+.original-portfolio .skills-top{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:30px}
+.original-portfolio .skills-top h2{margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(38px,5.5vw,82px);font-weight:400;line-height:1;letter-spacing:-.07em;text-transform:uppercase}
+.original-portfolio .skills-controls{display:flex;gap:8px}
+.original-portfolio .skills-controls button{width:48px;height:48px;border:2px solid #21182c;border-radius:50%;background:transparent;color:#21182c;font-size:24px;transition:background .2s,color .2s,transform .2s}
+.original-portfolio .skills-controls button:hover{background:#21182c;color:#fffaf1;transform:translateY(-2px)}
+.original-portfolio .skills-carousel{min-height:350px;background:#21182c;color:#fffaf1;overflow:hidden}
+.original-portfolio .skill-slide{position:relative;min-height:350px;padding:clamp(26px,4vw,55px);animation:skill-enter .3s ease-out}
+.original-portfolio .skill-slide[hidden]{display:none}
+.original-portfolio .skill-number,.original-portfolio .skill-tools{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;font-weight:600;letter-spacing:.035em;text-transform:uppercase}
+.original-portfolio .skill-number{color:#c9b5e0}
+.original-portfolio .skill-slide h3{margin:17px 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(64px,9vw,130px);font-weight:400;line-height:.9;letter-spacing:-.08em;text-transform:uppercase}
+.original-portfolio .skill-slide p{max-width:620px;margin:22px 0 24px;font-size:clamp(18px,2vw,25px);line-height:1.28}
+.original-portfolio .skill-tools{color:#c9b5e0}
+.original-portfolio .skills-index{display:flex;border:2px solid #21182c;border-top:0}
+.original-portfolio .skills-index button{flex:1;min-height:58px;padding:12px 18px;border:0;border-right:1px solid #21182c;background:transparent;color:#21182c;text-align:left;font-weight:700;transition:background .2s,color .2s}
+.original-portfolio .skills-index button:last-child{border-right:0}
+.original-portfolio .skills-index button[aria-current],.original-portfolio .skills-index button:hover{background:#21182c;color:#fffaf1}
+@keyframes skill-enter{from{opacity:.55;transform:translateX(16px)}to{opacity:1;transform:none}}
 .original-portfolio footer{padding:clamp(80px,9vw,125px) 0 30px;background:#201629;color:#fffaf1}
 .original-portfolio .contact{padding-bottom:110px}
 .original-portfolio .contact .eyebrow{margin:0 0 40px;color:#cbb3e8}
-.original-portfolio .contact h2{margin:0 0 55px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(47px,6.2vw,100px);font-weight:400;line-height:1.04;letter-spacing:-.07em;text-transform:uppercase}
+.original-portfolio .contact h2{margin:0 0 55px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(45px,5.5vw,84px);font-weight:400;line-height:1.04;letter-spacing:-.07em;text-transform:uppercase}
 .original-portfolio .contact>a{display:inline-flex;align-items:center;gap:60px;border-bottom:2px solid currentColor;padding-bottom:8px;font-size:clamp(19px,2.5vw,33px);letter-spacing:-.04em;transition:gap .2s}
 .original-portfolio .contact>a:hover{gap:75px}
 .original-portfolio .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:22px;border-top:1px solid #675872;font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px}
@@ -132,7 +144,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .nav-links a{font-size:11px}
   .original-portfolio .hero-grid{gap:35px;padding:55px 0 35px}
   .original-portfolio .hero-main .eyebrow{margin-bottom:45px}
-  .original-portfolio .hero h1{font-size:clamp(58px,15vw,91px)}
+  .original-portfolio .hero h1{font-size:clamp(54px,13.5vw,82px)}
   .original-portfolio .hero h1 span:first-child{-webkit-text-stroke:1px #21182c}
   .original-portfolio .hero-role{font-size:27px}
   .original-portfolio .hero-bottom{font-size:10px}
@@ -140,7 +152,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .work-section{padding:75px 0 85px}
   .original-portfolio .section-heading{display:block;margin-bottom:28px}
   .original-portfolio .section-heading .eyebrow{margin-bottom:18px}
-  .original-portfolio .section-heading h2{font-size:clamp(34px,8vw,48px)}
+  .original-portfolio .section-heading h2{font-size:clamp(32px,7.5vw,42px)}
   .original-portfolio .gallery-label{display:none}
   .original-portfolio .project-stage{height:clamp(260px,80vw,420px);padding:20px}
   .original-portfolio .calorie-work .project-stage{height:440px}
@@ -155,11 +167,16 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .project-index button{flex:0 0 165px;scroll-snap-align:start;font-size:13px}
   .original-portfolio .experience-row{grid-template-columns:1fr;gap:5px}
   .original-portfolio .experience-row p{text-align:left}
-  .original-portfolio .skills-grid{grid-template-columns:1fr;gap:25px;margin-top:36px}
-  .original-portfolio .skills-grid h3{margin-top:13px}
-  .original-portfolio .contact h2{font-size:clamp(43px,11vw,68px)}
+  .original-portfolio .skills-top{align-items:end}
+  .original-portfolio .skills-top h2{font-size:clamp(34px,8vw,54px)}
+  .original-portfolio .skills-controls button{width:42px;height:42px}
+  .original-portfolio .skills-carousel,.original-portfolio .skill-slide{min-height:315px}
+  .original-portfolio .skill-slide h3{font-size:clamp(56px,13vw,82px)}
+  .original-portfolio .skill-slide p{font-size:18px}
+  .original-portfolio .skills-index button{min-height:54px;padding:10px;font-size:13px}
+  .original-portfolio .contact h2{font-size:clamp(40px,9.5vw,60px)}
   .original-portfolio .contact>a{gap:18px;font-size:clamp(17px,5vw,23px)}
   .original-portfolio .footer-bottom{display:block}.original-portfolio .footer-bottom>div{margin-top:20px}
 }
-@media(max-width:375px){.original-portfolio .hero h1{font-size:57px}.original-portfolio .brand{font-size:13px}.original-portfolio .hero-actions{display:grid}.original-portfolio .project-stage{height:260px}.original-portfolio .calorie-work .project-stage{height:410px}}
+@media(max-width:375px){.original-portfolio .hero h1{font-size:53px}.original-portfolio .brand{font-size:13px}.original-portfolio .hero-actions{display:grid}.original-portfolio .project-stage{height:260px}.original-portfolio .calorie-work .project-stage{height:410px}}
 @media(prefers-reduced-motion:reduce){html:has(.original-portfolio){scroll-behavior:auto}.original-portfolio *,.original-portfolio *::before,.original-portfolio *::after{animation:none!important;transition:none!important}.original-portfolio .reveal-ready{opacity:1;transform:none}.original-portfolio .work:hover .project-stage img{transform:none}}
