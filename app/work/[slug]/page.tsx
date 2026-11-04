@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import OriginalTheme from "../../original-theme";
-import "../../original-home.css";
+import "../../exhibition.css";
 
 const projects = {
   "studio-booking": {
@@ -52,7 +52,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
   const { slug } = await params;
   if (!(slug in projects)) notFound();
   const project = projects[slug as Slug];
-  return <><OriginalTheme /><main className="original-portfolio case-study">
+  return <><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" /><OriginalTheme /><main className="original-portfolio case-study">
     <a className="back" href="/#work">← All work</a>
     <h1>{project.title}</h1><p className="lead">{project.goal}</p>
     <h2>How it works</h2><p>{project.architecture}</p>
