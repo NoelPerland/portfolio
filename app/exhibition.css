@@ -45,19 +45,19 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}
 .original-portfolio .section-heading .eyebrow{flex:none;margin:0 0 9px;color:var(--muted)}
 .original-portfolio .section-heading h2{max-width:1000px;margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(31px,3.2vw,52px);font-weight:400;line-height:1.03;letter-spacing:-.065em;text-transform:uppercase}
-.original-portfolio .gallery-shell{border:2px solid var(--ink);background:var(--paper);overflow:hidden}
+.original-portfolio .gallery-shell{--stage-height:clamp(320px,39vw,520px);position:relative;border:2px solid var(--ink);background:var(--paper);overflow:hidden}
 .original-portfolio .carousel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:72px;padding:0 clamp(18px,2.5vw,38px);background:var(--gallery);color:var(--gallery-ink)}
 .original-portfolio .carousel-counter,.original-portfolio .gallery-label{margin:0}
 .original-portfolio .carousel-counter{font-size:15px}
 .original-portfolio .carousel-counter span{font-family:"Archivo Black",Arial,sans-serif;font-size:26px}
 .original-portfolio .gallery-label{color:#d9c8e7}
-.original-portfolio .carousel-controls{display:flex;gap:8px}
-.original-portfolio .carousel-controls button{min-width:96px;min-height:44px;padding:9px 14px;border:1px solid var(--gallery-line);background:transparent;color:inherit;font-size:13px;font-weight:700;line-height:1;transition:background .2s,color .2s,transform .2s}
+.original-portfolio .carousel-controls{position:absolute;z-index:2;top:72px;left:14px;right:14px;height:var(--stage-height);display:flex;align-items:center;justify-content:space-between;gap:8px;pointer-events:none}
+.original-portfolio .carousel-controls button{min-width:96px;min-height:44px;padding:9px 14px;border:1px solid #fffaf1;background:#21182c;color:#fffaf1;font-size:13px;font-weight:700;line-height:1;pointer-events:auto;transition:background .2s,color .2s,transform .2s}
 .original-portfolio .carousel-controls button:hover{background:var(--electric);color:#21182c;transform:scale(1.08)}
 .original-portfolio .work{animation:project-enter .45s ease both}
 .original-portfolio .work[hidden]{display:none}
 @keyframes project-enter{from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:none}}
-.original-portfolio .project-stage{position:relative;display:grid;place-items:center;height:clamp(320px,39vw,520px);padding:clamp(24px,4vw,55px);background:#d4bdeb;overflow:hidden;isolation:isolate}
+.original-portfolio .project-stage{position:relative;display:grid;place-items:center;height:var(--stage-height);padding:clamp(24px,4vw,55px);background:#d4bdeb;overflow:hidden;isolation:isolate}
 .original-portfolio .work:nth-child(2) .project-stage{background:#b5afd3}
 .original-portfolio .work:nth-child(3) .project-stage{background:#b6c5c6}
 .original-portfolio .work:nth-child(4) .project-stage{background:#dac8ac}
@@ -104,8 +104,8 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .skills-controls{display:flex;gap:8px}
 .original-portfolio .skills-controls button{width:48px;height:48px;border:2px solid #21182c;border-radius:50%;background:transparent;color:#21182c;font-size:24px;transition:background .2s,color .2s,transform .2s}
 .original-portfolio .skills-controls button:hover{background:#21182c;color:#fffaf1;transform:translateY(-2px)}
-.original-portfolio .skills-carousel{min-height:350px;background:#21182c;color:#fffaf1;overflow:hidden}
-.original-portfolio .skill-slide{position:relative;min-height:350px;padding:clamp(26px,4vw,55px);animation:skill-enter .3s ease-out}
+.original-portfolio .skills-carousel{min-height:390px;background:#21182c;color:#fffaf1;overflow:hidden}
+.original-portfolio .skill-slide{position:relative;min-height:390px;padding:clamp(30px,4vw,55px);animation:skill-enter .3s ease-out}
 .original-portfolio .skill-slide:nth-child(2){background:#352640}
 .original-portfolio .skill-slide:nth-child(3){background:#f5efe5;color:#21182c}
 .original-portfolio .skill-slide[hidden]{display:none}
@@ -113,7 +113,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .skill-number{color:#c9b5e0}
 .original-portfolio .skill-slide h3{margin:17px 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(64px,9vw,130px);font-weight:400;line-height:.9;letter-spacing:-.08em;text-transform:uppercase}
 .original-portfolio .skill-slide p{max-width:620px;margin:22px 0 24px;font-size:clamp(18px,2vw,25px);line-height:1.28}
-.original-portfolio .skill-tools{display:block;color:#c9b5e0}
+.original-portfolio .skill-tools{display:block;max-width:620px;color:#d6c6e7;line-height:1.7}
 .original-portfolio .skill-slide:nth-child(3) .skill-number,.original-portfolio .skill-slide:nth-child(3) .skill-tools{color:#51405e}
 .original-portfolio .skill-proof{display:inline-block;margin-top:18px;border-bottom:2px solid currentColor;padding-bottom:3px;font-size:14px;font-weight:700;transition:transform .2s}
 .original-portfolio .skill-proof:hover{transform:translateX(4px)}
@@ -142,7 +142,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .case-study .case-links{display:flex;gap:30px;flex-wrap:wrap;margin-top:70px;font-weight:700}
 .case-study .case-links a{text-decoration:underline;text-underline-offset:5px}
 @media(max-width:1050px){.original-portfolio .project-info{grid-template-columns:120px 1fr;grid-template-areas:"type detail" "title title" "links links"}.original-portfolio .project-detail{margin:0}.original-portfolio .project-links{margin-top:10px}}
-@media(max-width:800px){.original-portfolio .hero-grid{grid-template-columns:1fr;gap:42px;min-height:0;padding:62px 0 45px}.original-portfolio .hero-position{margin-bottom:42px}.original-portfolio .hero h1{font-size:clamp(64px,10.5vw,98px)}.original-portfolio .hero-aside{max-width:650px}.original-portfolio .project-stage{height:clamp(310px,60vw,460px)}.original-portfolio .about{grid-template-columns:1fr;gap:60px}.original-portfolio .about-photo{max-width:360px}.original-portfolio .experience-row{grid-template-columns:115px 1fr 160px}}
+@media(max-width:800px){.original-portfolio .hero-grid{grid-template-columns:1fr;gap:42px;min-height:0;padding:62px 0 45px}.original-portfolio .hero-position{margin-bottom:42px}.original-portfolio .hero h1{font-size:clamp(64px,10.5vw,98px)}.original-portfolio .hero-aside{max-width:650px}.original-portfolio .gallery-shell{--stage-height:clamp(310px,60vw,460px)}.original-portfolio .about{grid-template-columns:1fr;gap:60px}.original-portfolio .about-photo{max-width:360px}.original-portfolio .experience-row{grid-template-columns:115px 1fr 160px}}
 @media(max-width:600px){
   .original-portfolio .site-nav .bar{grid-template-columns:1fr auto;min-height:92px;padding-top:6px;padding-bottom:8px;gap:4px}
   .original-portfolio .nav-links{grid-column:1/-1;grid-row:2;justify-content:space-between;gap:12px;border-top:1px solid #6e6177;padding-top:8px}
@@ -159,8 +159,9 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .section-heading .eyebrow{margin-bottom:18px}
   .original-portfolio .section-heading h2{font-size:clamp(32px,7.5vw,42px)}
   .original-portfolio .gallery-label{display:none}
-  .original-portfolio .project-stage{height:clamp(245px,74vw,360px);padding:20px}
-  .original-portfolio .calorie-work .project-stage{height:390px}
+  .original-portfolio .gallery-shell{--stage-height:clamp(245px,74vw,360px)}
+  .original-portfolio .project-stage{padding:20px}
+  .original-portfolio .gallery-shell:has(.calorie-work:not([hidden])){--stage-height:390px}
   .original-portfolio .project-stage img{max-height:100%}
   .original-portfolio .stage-index{font-size:300px}
   .original-portfolio .project-info{display:block;padding:25px}
@@ -169,6 +170,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .project-detail{margin-top:18px}
   .original-portfolio .project-links{margin-top:22px}
   .original-portfolio .carousel-top{min-height:64px;padding:0 14px}
+  .original-portfolio .carousel-controls{top:64px;left:8px;right:8px}
   .original-portfolio .carousel-controls button{min-width:76px;padding:8px;font-size:11px}
   .original-portfolio .project-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
   .original-portfolio .project-index button{min-height:56px;padding:10px 12px;font-size:13px}
@@ -177,13 +179,14 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .skills-top{align-items:end}
   .original-portfolio .skills-top h2{font-size:clamp(34px,8vw,54px)}
   .original-portfolio .skills-controls button{width:42px;height:42px}
-  .original-portfolio .skills-carousel,.original-portfolio .skill-slide{min-height:315px}
-  .original-portfolio .skill-slide h3{font-size:clamp(56px,13vw,82px)}
-  .original-portfolio .skill-slide p{font-size:18px}
+  .original-portfolio .skills-carousel,.original-portfolio .skill-slide{min-height:380px}
+  .original-portfolio .skill-slide h3{font-size:clamp(52px,12vw,76px)}
+  .original-portfolio .skill-slide p{font-size:17px;line-height:1.4}
+  .original-portfolio .skill-tools{font-size:11px}
   .original-portfolio .skills-index button{min-height:54px;padding:10px;font-size:13px}
   .original-portfolio .contact h2{font-size:clamp(40px,9.5vw,60px)}
   .original-portfolio .contact>a{gap:18px;font-size:clamp(17px,5vw,23px)}
   .original-portfolio .footer-bottom{display:block}.original-portfolio .footer-bottom>div{margin-top:20px}
 }
-@media(max-width:375px){.original-portfolio .hero h1{font-size:50px}.original-portfolio .brand{font-size:13px}.original-portfolio .hero-actions{display:grid}.original-portfolio .project-stage{height:245px}.original-portfolio .calorie-work .project-stage{height:370px}}
+@media(max-width:375px){.original-portfolio .hero h1{font-size:50px}.original-portfolio .brand{font-size:13px}.original-portfolio .hero-actions{display:grid}.original-portfolio .gallery-shell{--stage-height:245px}.original-portfolio .gallery-shell:has(.calorie-work:not([hidden])){--stage-height:370px}}
 @media(prefers-reduced-motion:reduce){html:has(.original-portfolio){scroll-behavior:auto}.original-portfolio *,.original-portfolio *::before,.original-portfolio *::after{animation:none!important;transition:none!important}.original-portfolio .reveal-ready{opacity:1;transform:none}.original-portfolio .work:hover .project-stage img{transform:none}}
