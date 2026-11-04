@@ -81,11 +81,13 @@ export default function OriginalTheme() {
       if (!skillSlides.length) return;
       const index = (next + skillSlides.length) % skillSlides.length;
       if (index === activeSkill) return;
+      const focusWasInside = skillSlides[activeSkill].contains(document.activeElement);
       skillSlides[activeSkill].hidden = true;
       skillChoices[activeSkill].removeAttribute("aria-current");
       skillSlides[index].hidden = false;
       skillChoices[index].setAttribute("aria-current", "true");
       if (skillAnnouncement) skillAnnouncement.textContent = `${skillChoices[index].textContent}, ${index + 1} of ${skillSlides.length}`;
+      if (focusWasInside) skillSlides[index].querySelector<HTMLAnchorElement>(".skill-proof")?.focus();
       activeSkill = index;
     };
     const onSkillChoice = (event: Event) => showSkill(Number((event.currentTarget as HTMLButtonElement).dataset.skill));
