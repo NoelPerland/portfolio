@@ -61,8 +61,13 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .work{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(300px,.8fr);min-height:clamp(500px,49vw,665px);animation:project-in .42s ease-out both}
 .original-portfolio .work[hidden]{display:none}
 @keyframes project-in{from{opacity:.45;transform:translateX(12px)}to{opacity:1;transform:none}}
+.original-portfolio .work .project-stage{animation:stage-reveal .6s cubic-bezier(.2,.7,.2,1) both}
+.original-portfolio .work .project-info{animation:info-rise .5s .14s both}
+@keyframes stage-reveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0)}}
+@keyframes info-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .original-portfolio .project-stage{min-width:0;min-height:0;display:grid;place-items:center;padding:clamp(22px,3.2vw,48px);background:#252c2d;overflow:hidden}
 .original-portfolio .project-stage img{display:block;width:100%;height:100%;max-height:570px;object-fit:contain;box-shadow:0 25px 65px #0008;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.original-portfolio .calorie-work .project-stage img{width:auto;max-width:100%;height:100%;border-radius:20px}
 .original-portfolio .work:hover .project-stage img{transform:scale(1.025)}
 .original-portfolio .project-info{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:clamp(28px,3vw,47px);border-left:1px solid var(--gallery-line)}
 .original-portfolio .project-type{margin:0;color:#acb6b0}
@@ -77,6 +82,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .project-index button{min-width:0;min-height:90px;padding:17px 10px 14px 0;border:0;border-top:2px solid transparent;background:transparent;color:var(--muted);text-align:left;font-size:14px;font-weight:500;cursor:pointer;transition:color .2s,border-color .2s}
 .original-portfolio .project-index button span{display:block;margin-bottom:10px;font-family:"IBM Plex Mono",Consolas,monospace;font-size:11px}
 .original-portfolio .project-index button:hover,.original-portfolio .project-index button[aria-current="true"]{color:var(--ink);border-top-color:var(--ink)}
+.original-portfolio .project-index button:hover{transform:translateY(-3px)}
 .original-portfolio .portfolio-about{padding:100px 0;border-top:1px solid var(--line)}
 .original-portfolio .about{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(270px,.55fr);align-items:center;gap:clamp(50px,10vw,175px)}
 .original-portfolio .about-copy .eyebrow{margin:0 0 25px;color:var(--muted)}
@@ -135,6 +141,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .gallery-label{display:none}
   .original-portfolio .carousel-top{grid-template-columns:1fr auto}
   .original-portfolio .project-stage{height:clamp(265px,70vw,430px);padding:20px}
+  .original-portfolio .calorie-work .project-stage{height:430px}
   .original-portfolio .project-info{display:block;padding:28px}
   .original-portfolio .project-info h3{margin:22px 0 14px}
   .original-portfolio .project-detail{margin-top:24px}
@@ -155,6 +162,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .hero-bottom{font-size:10px}
   .original-portfolio .section-heading h2{font-size:38px}
   .original-portfolio .project-stage{height:250px;padding:12px}
+  .original-portfolio .calorie-work .project-stage{height:390px}
   .original-portfolio .project-info h3{font-size:37px}
   .original-portfolio .contact>a{gap:14px;font-size:20px}
   .original-portfolio .footer-bottom{display:block}
