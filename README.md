@@ -22,7 +22,9 @@ The homepage works without secrets. For the legacy AI routes, copy `.env.example
 | Project | Live app | Source |
 | --- | --- | --- |
 | Reply Desk | [Open app](https://support-desk-ai-noel-perlands-projects.vercel.app/) | [support-desk-ai](https://github.com/NoelPerland/support-desk-ai) |
+| Forma Studio | [Open app](https://studio-booking-gules.vercel.app/) | [studio-booking](https://github.com/NoelPerland/studio-booking) |
 | Minute to Action | [Open app](https://minute-to-action-noel-perlands-projects.vercel.app/) | [minute-to-action](https://github.com/NoelPerland/minute-to-action) |
+| Startup Analyzer | [Open app](https://startup-postmortem-analyzer.vercel.app/) (demo mode) | [startup-postmortem-analyzer](https://github.com/NoelPerland/startup-postmortem-analyzer) |
 | Calorie Tracker | [Open app](https://noelperland.github.io/calorie-tracker/) (guest logging available) | [calorie-tracker](https://github.com/NoelPerland/calorie-tracker) |
 | Game Hub | [Play games](https://noelperland.github.io/noels-game-hub/) | [noels-game-hub](https://github.com/NoelPerland/noels-game-hub) |
 | GamePulse | Local demo; hosting pending | [gamepulse](https://github.com/NoelPerland/gamepulse) |
