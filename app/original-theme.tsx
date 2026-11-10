@@ -111,14 +111,6 @@ export default function OriginalTheme() {
     };
     skillCarousel?.addEventListener("touchstart", onSkillTouchStart, { passive: true });
     skillCarousel?.addEventListener("touchend", onSkillTouchEnd, { passive: true });
-    const targets = document.querySelectorAll<HTMLElement>(".original-portfolio .work-section .section-heading, .original-portfolio .portfolio-about .about-copy, .original-portfolio .skills-section .skills-top");
-    const reveal = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? null : new IntersectionObserver(entries => {
-      for (const entry of entries) if (entry.isIntersecting) {
-        entry.target.classList.add("revealed");
-        reveal?.unobserve(entry.target);
-      }
-    }, { threshold: 0.08 });
-    targets.forEach(target => { if (reveal) { target.classList.add("reveal-ready"); reveal.observe(target); } });
     return () => {
       toggle?.removeEventListener("click", changeTheme);
       choices.forEach(button => button.removeEventListener("click", onChoice));
@@ -131,7 +123,6 @@ export default function OriginalTheme() {
       skillsSection?.removeEventListener("keydown", onSkillKey);
       skillCarousel?.removeEventListener("touchstart", onSkillTouchStart);
       skillCarousel?.removeEventListener("touchend", onSkillTouchEnd);
-      reveal?.disconnect();
     };
   }, []);
 

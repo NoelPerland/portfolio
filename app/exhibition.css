@@ -130,8 +130,6 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:22px;border-top:1px solid #675872;font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px}
 .original-portfolio .footer-bottom>div{display:flex;flex-wrap:wrap;gap:25px}
 .original-portfolio .footer-bottom a:hover{text-decoration:underline;text-underline-offset:4px}
-.original-portfolio .reveal-ready{opacity:0;transform:translateY(24px)}
-.original-portfolio .reveal-ready.revealed{opacity:1;transform:none;transition:opacity .6s,transform .6s}
 .original-portfolio.case-study{max-width:none;padding:clamp(65px,8vw,130px) max(24px,calc((100vw - 900px)/2));font-size:18px;line-height:1.6}
 .case-study .back{font-size:14px;font-weight:700;border-bottom:2px solid currentColor;padding-bottom:4px}
 .case-study h1{font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(50px,7vw,100px);font-weight:400;line-height:1.03;letter-spacing:-.07em;text-transform:uppercase;margin:75px 0 25px}
@@ -186,4 +184,4 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .footer-bottom{display:block}.original-portfolio .footer-bottom>div{margin-top:20px}
 }
 @media(max-width:375px){.original-portfolio .hero h1{font-size:50px}.original-portfolio .brand{font-size:13px}.original-portfolio .hero-actions{display:grid}.original-portfolio .gallery-shell{--stage-height:245px}.original-portfolio .gallery-shell:has(.calorie-work:not([hidden])){--stage-height:370px}}
-@media(prefers-reduced-motion:reduce){html:has(.original-portfolio){scroll-behavior:auto}.original-portfolio *,.original-portfolio *::before,.original-portfolio *::after{animation:none!important;transition:none!important}.original-portfolio .reveal-ready{opacity:1;transform:none}.original-portfolio .work:hover .project-stage img{transform:none}}
+@media(prefers-reduced-motion:reduce){html:has(.original-portfolio){scroll-behavior:auto}.original-portfolio *,.original-portfolio *::before,.original-portfolio *::after{animation:none!important;transition:none!important}.original-portfolio .work:hover .project-stage img{transform:none}}
