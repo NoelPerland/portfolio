@@ -64,6 +64,8 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .work:nth-child(5) .project-stage{background:#caadd0}
 .original-portfolio .work:nth-child(6) .project-stage{background:#c9d0c3}
 .original-portfolio .stage-index{position:absolute;left:-.02em;bottom:-.22em;z-index:-1;color:#21182c;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(240px,34vw,510px);line-height:1;letter-spacing:-.09em;opacity:.12;user-select:none}
+.original-portfolio .project-preview-link{display:grid;place-items:center;width:100%;height:100%;min-height:0}
+.original-portfolio .project-preview-link:focus-visible{outline:3px solid #21182c;outline-offset:5px}
 .original-portfolio .project-stage img{display:block;width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain;box-shadow:0 18px 45px #21182c45;transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s}
 .original-portfolio .work:hover .project-stage img{transform:scale(1.035);box-shadow:0 26px 60px #21182c55}
 .original-portfolio .calorie-work .project-stage img{border-radius:20px}
@@ -106,14 +108,14 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .skills-carousel{min-height:390px;background:#21182c;color:#fffaf1;overflow:hidden}
 .original-portfolio .skill-slide{position:relative;min-height:390px;padding:clamp(30px,4vw,55px);animation:skill-enter .3s ease-out}
 .original-portfolio .skill-slide:nth-child(2){background:#352640}
-.original-portfolio .skill-slide:nth-child(3){background:#f5efe5;color:#21182c}
+.original-portfolio .skill-slide:nth-child(3){background:#21182c}
 .original-portfolio .skill-slide[hidden]{display:none}
 .original-portfolio .skill-number,.original-portfolio .skill-tools{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;font-weight:600;letter-spacing:.035em;text-transform:uppercase}
 .original-portfolio .skill-number{color:#c9b5e0}
 .original-portfolio .skill-slide h3{margin:17px 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(64px,9vw,130px);font-weight:400;line-height:.9;letter-spacing:-.08em;text-transform:uppercase}
 .original-portfolio .skill-slide p{max-width:620px;margin:22px 0 24px;font-size:clamp(18px,2vw,25px);line-height:1.28}
 .original-portfolio .skill-tools{display:block;max-width:620px;color:#d6c6e7;line-height:1.7}
-.original-portfolio .skill-slide:nth-child(3) .skill-number,.original-portfolio .skill-slide:nth-child(3) .skill-tools{color:#51405e}
+.original-portfolio .skill-slide:nth-child(3) h3{font-size:clamp(52px,7.5vw,110px)}
 .original-portfolio .skill-proof{display:inline-block;margin-top:18px;border-bottom:2px solid currentColor;padding-bottom:3px;font-size:14px;font-weight:700;transition:transform .2s}
 .original-portfolio .skill-proof:hover{transform:translateX(4px)}
 .original-portfolio .skills-index{display:flex;border:2px solid #21182c;border-top:0}
