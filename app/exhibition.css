@@ -45,15 +45,15 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}
 .original-portfolio .section-heading .eyebrow{flex:none;margin:0 0 9px;color:var(--muted)}
 .original-portfolio .section-heading h2{max-width:1000px;margin:0;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(31px,3.2vw,52px);font-weight:400;line-height:1.03;letter-spacing:-.065em;text-transform:uppercase}
-.original-portfolio .gallery-shell{--stage-height:clamp(320px,39vw,520px);position:relative;border:2px solid var(--ink);background:var(--paper);overflow:hidden}
-.original-portfolio .carousel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:72px;padding:0 clamp(18px,2.5vw,38px);background:var(--gallery);color:var(--gallery-ink)}
+.original-portfolio .gallery-shell{--stage-height:clamp(320px,39vw,520px);background:transparent}
+.original-portfolio .carousel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:64px;padding:0 0 16px;color:var(--ink)}
 .original-portfolio .carousel-counter,.original-portfolio .gallery-label{margin:0}
 .original-portfolio .carousel-counter{font-size:15px}
 .original-portfolio .carousel-counter span{font-family:"Archivo Black",Arial,sans-serif;font-size:26px}
 .original-portfolio .gallery-label{color:#d9c8e7}
-.original-portfolio .carousel-controls{position:absolute;z-index:2;top:72px;left:14px;right:14px;height:var(--stage-height);display:flex;align-items:center;justify-content:space-between;gap:8px;pointer-events:none}
-.original-portfolio .carousel-controls button{min-width:96px;min-height:44px;padding:9px 14px;border:1px solid #fffaf1;background:#21182c;color:#fffaf1;font-size:13px;font-weight:700;line-height:1;pointer-events:auto;transition:background .2s,color .2s,transform .2s}
-.original-portfolio .carousel-controls button:hover{background:var(--electric);color:#21182c;transform:scale(1.08)}
+.original-portfolio .carousel-controls{display:flex;gap:8px}
+.original-portfolio .carousel-controls button{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-size:22px;line-height:1;transition:background .2s,color .2s,border-color .2s}
+.original-portfolio .carousel-controls button:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .original-portfolio .work{animation:project-enter .45s ease both}
 .original-portfolio .work[hidden]{display:none}
 @keyframes project-enter{from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -67,7 +67,7 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .project-stage img{display:block;width:auto;max-width:100%;height:auto;max-height:100%;object-fit:contain;box-shadow:0 18px 45px #21182c45;transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .55s}
 .original-portfolio .work:hover .project-stage img{transform:scale(1.035);box-shadow:0 26px 60px #21182c55}
 .original-portfolio .calorie-work .project-stage img{border-radius:20px}
-.original-portfolio .project-info{display:grid;grid-template-columns:130px minmax(0,1.45fr) minmax(240px,.8fr);grid-template-areas:"type title detail" "type title links";gap:15px 28px;padding:clamp(22px,2.6vw,36px);background:var(--paper);color:var(--ink)}
+.original-portfolio .project-info{display:grid;grid-template-columns:130px minmax(0,1.45fr) minmax(240px,.8fr);grid-template-areas:"type title detail" "type title links";gap:15px 28px;padding:clamp(22px,2.6vw,36px) 0;background:transparent;color:var(--ink)}
 .original-portfolio .project-type{grid-area:type;margin:8px 0 0;color:var(--muted)}
 .original-portfolio .project-info>div:nth-child(2){grid-area:title}
 .original-portfolio .project-info h3{margin:0 0 10px;font-family:"Archivo Black",Arial,sans-serif;font-size:clamp(32px,3vw,46px);font-weight:400;line-height:1.02;letter-spacing:-.065em;text-transform:uppercase}
@@ -77,11 +77,10 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .project-links a{border-bottom:2px solid currentColor;padding-bottom:4px;transition:transform .2s}
 .original-portfolio .project-links a:hover{transform:translateY(-3px)}
 .original-portfolio .no-live{color:var(--muted);font-weight:500}
-.original-portfolio .project-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:18px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.original-portfolio .project-index button{display:flex;align-items:center;gap:16px;min-width:0;min-height:66px;padding:12px 20px;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:transparent;color:var(--muted);text-align:left;font-size:15px;font-weight:600;transition:background .2s,color .2s,padding-left .2s}
+.original-portfolio .project-index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 22px;margin-top:8px}
+.original-portfolio .project-index button{display:flex;align-items:center;gap:16px;min-width:0;min-height:62px;padding:12px 2px;border:0;border-bottom:1px solid var(--line);background:transparent;color:var(--muted);text-align:left;font-size:15px;font-weight:600;transition:color .2s,border-color .2s}
 .original-portfolio .project-index button span{font-family:"IBM Plex Mono",Consolas,monospace;font-size:11px}
-.original-portfolio .project-index button:hover,.original-portfolio .project-index button[aria-current="true"]{background:var(--ink);color:var(--bg)}
-.original-portfolio .project-index button:hover{padding-left:27px}
+.original-portfolio .project-index button:hover,.original-portfolio .project-index button[aria-current="true"]{border-bottom-color:var(--ink);color:var(--ink)}
 .original-portfolio .portfolio-about{padding:clamp(80px,8vw,110px) 0;background:var(--ink);color:var(--bg)}
 .original-portfolio .about{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(270px,.55fr);align-items:center;gap:clamp(50px,9vw,160px)}
 .original-portfolio .about-copy .eyebrow{margin:0 0 35px;color:var(--electric)}
@@ -164,16 +163,14 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .gallery-shell:has(.calorie-work:not([hidden])){--stage-height:390px}
   .original-portfolio .project-stage img{max-height:100%}
   .original-portfolio .stage-index{font-size:300px}
-  .original-portfolio .project-info{display:block;padding:25px}
+  .original-portfolio .project-info{display:block;padding:25px 0}
   .original-portfolio .project-type{margin:0 0 16px}
   .original-portfolio .project-info h3{font-size:clamp(32px,8vw,45px)}
   .original-portfolio .project-detail{margin-top:18px}
   .original-portfolio .project-links{margin-top:22px}
-  .original-portfolio .carousel-top{min-height:64px;padding:0 14px}
-  .original-portfolio .carousel-controls{top:64px;left:8px;right:8px}
-  .original-portfolio .carousel-controls button{min-width:76px;padding:8px;font-size:11px}
-  .original-portfolio .project-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));overflow:visible}
-  .original-portfolio .project-index button{min-height:56px;padding:10px 12px;font-size:13px}
+  .original-portfolio .carousel-controls button{width:44px;height:44px}
+  .original-portfolio .project-index{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+  .original-portfolio .project-index button{min-height:56px;padding:10px 2px;font-size:13px}
   .original-portfolio .experience-row{grid-template-columns:1fr;gap:5px}
   .original-portfolio .experience-row p{text-align:left}
   .original-portfolio .skills-top{align-items:end}
