@@ -107,8 +107,6 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .skills-controls button:hover{background:#21182c;color:#fffaf1;transform:translateY(-2px)}
 .original-portfolio .skills-carousel{min-height:390px;background:#21182c;color:#fffaf1;overflow:hidden}
 .original-portfolio .skill-slide{position:relative;min-height:390px;padding:clamp(30px,4vw,55px);animation:skill-enter .3s ease-out}
-.original-portfolio .skill-slide:nth-child(2){background:#352640}
-.original-portfolio .skill-slide:nth-child(3){background:#21182c}
 .original-portfolio .skill-slide[hidden]{display:none}
 .original-portfolio .skill-number,.original-portfolio .skill-tools{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;font-weight:600;letter-spacing:.035em;text-transform:uppercase}
 .original-portfolio .skill-number{color:#c9b5e0}
