@@ -4,8 +4,9 @@ import "./exhibition.css";
 
 export default function Home() {
   return <>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+
     <OriginalTheme />
+    <noscript><style>{`.original-portfolio .work[hidden],.original-portfolio .skill-slide[hidden]{display:block}.original-portfolio .carousel-top,.original-portfolio .project-index,.original-portfolio .skills-controls,.original-portfolio .skills-index,.original-portfolio .theme-toggle{display:none}.original-portfolio .work+.work{margin-top:48px}`}</style></noscript>
     <div className="original-portfolio" dangerouslySetInnerHTML={{ __html: homeMarkup }} />
   </>;
 }

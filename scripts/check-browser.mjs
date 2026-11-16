@@ -40,6 +40,68 @@ try {
     assert.deepEqual(await logout.json(), { signedOut: true });
   }
   browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : { channel: "chrome" });
+  if (portfolio) {
+    const home = await browser.newPage();
+    const homeErrors = [];
+    home.on("pageerror", error => homeErrors.push(error.message));
+    const externalFonts = [];
+    home.on("request", request => { if (/fonts\.googleapis|fonts\.gstatic/.test(request.url())) externalFonts.push(request.url()); });
+    for (const [width, height] of [[1366,768],[1920,1080],[390,844],[360,640],[844,390]]) {
+      await home.setViewportSize({width,height});
+      await home.goto(base);
+      await home.locator('.theme-toggle').click();
+      await home.reload();
+      assert.equal(await home.locator('html').getAttribute('data-theme'), 'dark', 'Saved theme survives reload');
+      for (const theme of ['dark','light']) {
+        if (theme === 'light') await home.locator('.theme-toggle').click();
+        assert(await home.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No horizontal page overflow');
+        for (let i=0;i<6;i++) {
+          await home.locator('.project-index button').nth(i).click();
+          const slide=home.locator('.work:not([hidden])');
+          assert.equal(await slide.count(),1);
+          await slide.locator('img').evaluate(img => img.decode());
+          assert.equal(await home.locator('#slide-current').innerText(),String(i+1).padStart(2,'0'));
+        }
+        await home.getByRole('button',{name:'Next project',exact:true}).click();
+        assert.equal(await home.locator('#slide-current').innerText(),'01','Gallery wraps');
+        await home.locator('.project-index button').first().focus();
+        await home.keyboard.press('ArrowLeft');
+        assert.equal(await home.locator('#slide-current').innerText(),'06','Keyboard navigation wraps');
+        for(let i=0;i<3;i++) {
+          await home.locator('.skills-index button').nth(i).click();
+          assert.equal(await home.locator('.skill-slide:not([hidden])').count(),1);
+          assert.equal(await home.locator('.skills-index button[aria-current]').count(),1);
+        }
+      }
+    }
+    await home.goto(base);
+    await home.keyboard.press('Tab');
+    assert.equal(await home.locator(':focus').innerText(),'Skip to content');
+    await home.keyboard.press('Enter');
+    assert.equal(await home.locator(':focus').getAttribute('id'),'main-content');
+    const cv=await home.request.get(base+'/noel-perland-cv.pdf');
+    assert(cv.ok());assert((await cv.body()).subarray(0,4).toString()==='%PDF');
+    for(const path of ['/work/studio-booking','/work/minute-to-action','/work/game-hub','/work/reply-desk']) {
+      const response=await home.goto(base+path);assert.equal(response.status(),200);
+      await home.getByRole('heading',{name:'Engineering decisions'}).waitFor();
+      await home.getByRole('link',{name:'All work',exact:false}).click();
+      await home.locator('.project-index').waitFor();
+    }
+    const noJs=await browser.newContext({javaScriptEnabled:false});
+    const fallback=await noJs.newPage();await fallback.goto(base);
+    assert.equal(await fallback.locator('.work:visible').count(),6,'Every project is readable without JavaScript');
+    assert.equal(await fallback.locator('.skill-slide:visible').count(),3);
+    await noJs.close();
+    const blocked=await browser.newContext();await blocked.addInitScript(()=>{Storage.prototype.getItem=()=>{throw new Error('Storage disabled')};Storage.prototype.setItem=()=>{throw new Error('Storage disabled')};});
+    const storagePage=await blocked.newPage();await storagePage.goto(base);await storagePage.locator('.theme-toggle').click();assert.equal(await storagePage.locator('html').getAttribute('data-theme'),'dark');await blocked.close();
+    const early=await browser.newContext();await early.addInitScript(()=>localStorage.setItem('portfolio2-theme','dark'));
+    const earlyPage=await early.newPage();await earlyPage.route('**/*.js*',route=>route.abort());await earlyPage.goto(base);assert.equal(await earlyPage.locator('html').getAttribute('data-theme'),'dark','Saved theme applies before React loads');await early.close();
+    await home.emulateMedia({reducedMotion:'reduce'});await home.goto(base);
+    assert.equal(await home.locator('html').evaluate(el=>getComputedStyle(el).scrollBehavior),'auto');
+    assert.deepEqual(homeErrors,[]);assert.deepEqual(externalFonts,[],'Fonts are served from the portfolio');
+    await home.close();
+    console.log('PASS: five viewport sizes, both themes, all project/skill slides, keyboard navigation, CV, build notes, disabled storage, theme before hydration, reduced motion, and no-JavaScript content.');
+  }
   const page = await browser.newPage();
   const errors = [];
   page.on("pageerror", error => errors.push(error.message));

@@ -106,3 +106,9 @@ Run `npm run build`, then `npm run test:browser` using Node24. The test starts/s
 Checks cover blocked browser storage, nonempty/empty draft leave warnings, failed generation preserving exact input and enabling retry. Portfolio also checks canceled discard. API responses are mocked; this does not verify live AI, database isolation, real account login, session renewal, email delivery, or physical devices. Registration remains disabled pending real confirmation-email verification.
 
 The regression also checks rejection of foreign-origin mutations. Standalone checks cover guest auth status, disabled registration and guest logout with backend credentials cleared. Real account login, refresh, isolation and email delivery remain release checklist items requiring authorized test accounts.
+
+## Performance and regression checks
+
+The portfolio stays statically rendered. Fonts are self-hosted by Next.js; responsive WebP previews and portrait variants reduce image transfer. Saved themes initialize before hydration, and all six projects and three skill panels remain readable without JavaScript. Native cross-document transitions are optional and respect reduced motion.
+
+Run `npm run build` then `npm run test:browser` with Chrome installed. The browser suite checks five viewport sizes, both themes, gallery and keyboard navigation, build notes, CV, storage failures, theme initialization, reduced motion and no-JavaScript content, plus legacy draft protections with mocked APIs. Live AI/database operations and physical-device testing are separate checks.
