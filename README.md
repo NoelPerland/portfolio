@@ -21,7 +21,7 @@ The homepage works without secrets. For the legacy AI routes, copy `.env.example
 
 | Project | Live app | Source |
 | --- | --- | --- |
-| Reply Desk | [Open app](https://support-desk-ai-noel-perlands-projects.vercel.app/) | [support-desk-ai](https://github.com/NoelPerland/support-desk-ai) |
+| Reply Desk | [Open app](https://support-desk-ai-gules.vercel.app/) | [support-desk-ai](https://github.com/NoelPerland/support-desk-ai) |
 | Forma Studio | [Open app](https://studio-booking-gules.vercel.app/) | [studio-booking](https://github.com/NoelPerland/studio-booking) |
 | Minute to Action | [Open app](https://minute-to-action-noel-perlands-projects.vercel.app/) | [minute-to-action](https://github.com/NoelPerland/minute-to-action) |
 | Startup Analyzer | [Open app](https://startup-postmortem-analyzer.vercel.app/) (demo mode) | [startup-postmortem-analyzer](https://github.com/NoelPerland/startup-postmortem-analyzer) |
@@ -37,7 +37,7 @@ As of 30 October 2026, standalone guest flows passed real AI generation, saved e
 
 The homepage has production-build, desktop/phone/rotation, theme persistence, CV and legacy-route checks. Physical-device coverage remains limited. The original Liivo URL is independently hosted; the Vercel URL above is the maintained release.
 
-The homepage features a keyboard- and swipe-accessible exhibition gallery of six projects in this order: Forma Studio, GamePulse, Minute to Action, Startup Analyzer, GameHub, and Calorie Tracker. Its plum and lavender print identity is distinct from the featured apps, with direct Live and GitHub links (source only for GamePulse). It keeps the portrait, CV, experience, skills, contact links, and theme switch. Static markup is in `app/home-markup.ts`; `app/exhibition.css` scopes the visual system so legacy application routes retain their own interface. `app/original-theme.tsx` handles the gallery and theme persistence, including disabled browser storage.
+The homepage features a keyboard- and swipe-accessible exhibition gallery of six projects in this order: Forma Studio, GamePulse, Minute to Action, Reply Desk, GameHub, and Calorie Tracker. Its plum and lavender print identity is distinct from the featured apps, with direct website previews and GitHub links (source only for GamePulse). Startup Analyzer remains available as a separate project. It keeps the portrait, CV, experience, skills, contact links, and theme switch. Static markup is in `app/home-markup.ts`; `app/exhibition.css` scopes the visual system so legacy application routes retain their own interface. `app/original-theme.tsx` handles the gallery and theme persistence, including disabled browser storage.
 
 ## Reply Desk
 

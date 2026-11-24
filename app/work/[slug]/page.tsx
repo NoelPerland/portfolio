@@ -19,7 +19,7 @@ const projects = {
     architecture: "Next.js and TypeScript handle the workspace. Server routes validate bounded input and model output. Supabase stores editable tickets under row-level access rules; an HttpOnly cookie identifies guest work.",
     decision: "The model drafts; the user edits and chooses status. Provider errors retain the request instead of inventing an answer. Company context stays in browser storage.",
     evidence: "Validation, provider failure, export and draft-recovery checks pass. Registration stays disabled while real account and confirmation-email flows await verification.",
-    live: "https://support-desk-ai-noel-perlands-projects.vercel.app/",
+    live: "https://support-desk-ai-gules.vercel.app/",
     code: "https://github.com/NoelPerland/support-desk-ai",
   },
   "minute-to-action": {

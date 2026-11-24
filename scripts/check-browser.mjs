@@ -49,6 +49,9 @@ try {
     for (const [width, height] of [[1366,768],[1920,1080],[390,844],[360,640],[844,390]]) {
       await home.setViewportSize({width,height});
       await home.goto(base);
+      assert.deepEqual((await home.locator('.project-index button').allTextContents()).map(text => text.replace(/^\d+\s*/, '')), ['Forma Studio','GamePulse','Minute to Action','Reply Desk','GameHub','Calorie Tracker']);
+      await home.locator('.project-index button').nth(3).click();
+      assert.equal(await home.locator('.work:not([hidden]) .project-preview-link').getAttribute('href'), 'https://support-desk-ai-gules.vercel.app/');
       await home.locator('.theme-toggle').click();
       await home.reload();
       assert.equal(await home.locator('html').getAttribute('data-theme'), 'dark', 'Saved theme survives reload');

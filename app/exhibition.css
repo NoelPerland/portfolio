@@ -19,6 +19,7 @@ html:has(.original-portfolio){scroll-behavior:smooth}
 .original-portfolio .nav-links{display:flex;gap:clamp(18px,2.5vw,42px)}
 .original-portfolio .nav-links a{font-size:13px;font-weight:600;transition:color .2s}
 .original-portfolio .nav-links a:hover{color:var(--electric)}
+html[data-theme="dark"] .original-portfolio .nav-links a:hover{color:#7042a1}
 .original-portfolio .nav-actions{justify-self:end}
 .original-portfolio .theme-toggle{display:grid;place-items:center;width:42px;height:42px;border:1px solid currentColor;border-radius:50%;background:transparent;color:inherit;transition:background .2s,color .2s}
 .original-portfolio .theme-toggle:hover{background:var(--electric);color:#21182c}
@@ -45,22 +46,24 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
 .original-portfolio .section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}
 .original-portfolio .section-heading .eyebrow{flex:none;margin:0 0 9px;color:var(--muted)}
 .original-portfolio .section-heading h2{max-width:1000px;margin:0;font-family:var(--font-display),Arial,sans-serif;font-size:clamp(31px,3.2vw,52px);font-weight:400;line-height:1.03;letter-spacing:-.065em;text-transform:uppercase}
-.original-portfolio .gallery-shell{--stage-height:clamp(320px,39vw,520px);background:transparent}
-.original-portfolio .carousel-top{display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:64px;padding:0 0 16px;color:var(--ink)}
+.original-portfolio .gallery-shell{--stage-height:clamp(320px,39vw,520px);position:relative;background:transparent}
+.original-portfolio .carousel-top{display:flex;align-items:center;gap:15px;min-height:56px;padding:0 0 12px;color:var(--ink)}
 .original-portfolio .carousel-counter,.original-portfolio .gallery-label{margin:0}
 .original-portfolio .carousel-counter{font-size:15px}
 .original-portfolio .carousel-counter span{font-family:var(--font-display),Arial,sans-serif;font-size:26px}
 .original-portfolio .gallery-label{color:#d9c8e7}
-.original-portfolio .carousel-controls{display:flex;gap:8px}
-.original-portfolio .carousel-controls button{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-size:22px;line-height:1;transition:background .2s,color .2s,border-color .2s}
-.original-portfolio .carousel-controls button:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.original-portfolio .carousel-controls{position:absolute;z-index:2;top:calc(56px + var(--stage-height)/2);left:10px;right:10px;display:flex;justify-content:space-between;pointer-events:none;transform:translateY(-50%)}
+.original-portfolio .carousel-controls button{width:50px;height:58px;pointer-events:auto;border:0;border-radius:3px;background:var(--paper);color:var(--ink);font-size:27px;line-height:1;box-shadow:0 6px 22px #21182c35;transition:transform .2s,background .2s,color .2s}
+.original-portfolio .carousel-controls button:hover{background:var(--ink);color:var(--bg)}
+.original-portfolio .carousel-controls button:first-child:hover{transform:translateX(-3px)}
+.original-portfolio .carousel-controls button:last-child:hover{transform:translateX(3px)}
 .original-portfolio .work{animation:project-enter .45s ease both}
 .original-portfolio .work[hidden]{display:none}
 @keyframes project-enter{from{opacity:.5;transform:translateY(10px)}to{opacity:1;transform:none}}
 .original-portfolio .project-stage{position:relative;display:grid;place-items:center;height:var(--stage-height);padding:clamp(24px,4vw,55px);background:#d4bdeb;overflow:hidden;isolation:isolate}
 .original-portfolio .work:nth-child(2) .project-stage{background:#b5afd3}
 .original-portfolio .work:nth-child(3) .project-stage{background:#b6c5c6}
-.original-portfolio .work:nth-child(4) .project-stage{background:#dac8ac}
+.original-portfolio .work:nth-child(4) .project-stage{background:#d9c7c0}
 .original-portfolio .work:nth-child(5) .project-stage{background:#caadd0}
 .original-portfolio .work:nth-child(6) .project-stage{background:#c9d0c3}
 .original-portfolio .project-preview-link{display:grid;place-items:center;width:100%;height:100%;min-height:0}
@@ -164,7 +167,8 @@ html[data-theme="dark"] .original-portfolio .moon-icon{display:block}
   .original-portfolio .project-info h3{font-size:clamp(32px,8vw,45px)}
   .original-portfolio .project-detail{margin-top:18px}
   .original-portfolio .project-links{margin-top:22px}
-  .original-portfolio .carousel-controls button{width:44px;height:44px}
+  .original-portfolio .carousel-controls{left:4px;right:4px}
+  .original-portfolio .carousel-controls button{width:44px;height:52px}
   .original-portfolio .project-index{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
   .original-portfolio .project-index button{min-height:56px;padding:10px 2px;font-size:13px}
   .original-portfolio .experience-row{grid-template-columns:1fr;gap:5px}
