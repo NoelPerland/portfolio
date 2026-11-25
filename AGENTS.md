@@ -5,7 +5,7 @@ Read README.md first. This repository is Noel's portfolio, not the home of every
 ## Preserve the current design
 - The portfolio uses a print-inspired plum and lavender exhibition identity, separate from the six apps. Keep six curated projects with verified live/source links; Reply Desk currently replaces Startup Analyzer in the gallery.
 - Homepage: `app/page.tsx`, static trusted `app/home-markup.ts`, scoped `app/exhibition.css`, theme and gallery interactions `app/original-theme.tsx`.
-- Keep portrait, CV, experience, skills and contact details. Update Work cards when a product has a verified public deployment. GamePulse has source only; do not imply a live app.
+- Keep portrait, CV, experience, skills and contact details. Update Work cards when a product has a verified public deployment. GamePulse's public Vercel site is a read-only synthetic-data demo; live ingestion remains in its source/local server.
 - The two new AI products live in separate repositories linked in README. Games live behind one Game Hub card.
 
 ## Existing users and data

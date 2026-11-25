@@ -13,6 +13,15 @@ const projects = {
     live: "https://studio-booking-gules.vercel.app/",
     code: "https://github.com/NoelPerland/studio-booking",
   },
+  "gamepulse": {
+    title: "GamePulse",
+    goal: "Find where players stop, retry or struggle in a game session.",
+    architecture: "A Next.js console reads SQL-derived metrics from a Node server and PostgreSQL-compatible store. A Unity client batches events; WebSockets notify connected dashboards after accepted writes.",
+    decision: "Immutable event IDs make retries idempotent. A version check prevents simultaneous remote-configuration edits from silently overwriting each other.",
+    evidence: "Database and browser checks cover ingestion, retries, metrics, reconnects and configuration conflicts. The public site is a read-only demo with labeled synthetic sessions; Unity Editor testing remains open.",
+    live: "https://gamepulse-noel.vercel.app/",
+    code: "https://github.com/NoelPerland/gamepulse",
+  },
   "reply-desk": {
     title: "Reply Desk",
     goal: "Turn a customer request into a reviewed reply and trackable next step.",

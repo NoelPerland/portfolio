@@ -32,7 +32,6 @@ export default function OriginalTheme() {
     const carousel = workSection?.querySelector<HTMLElement>(".works");
     const slides = [...(carousel?.querySelectorAll<HTMLElement>(".work") ?? [])];
     const choices = [...(workSection?.querySelectorAll<HTMLButtonElement>(".project-index button") ?? [])];
-    const counter = workSection?.querySelector<HTMLElement>("#slide-current");
     const announcement = workSection?.querySelector<HTMLElement>("#slide-announcement");
     const projectIndex = workSection?.querySelector<HTMLElement>(".project-index");
     let active = 0;
@@ -44,7 +43,6 @@ export default function OriginalTheme() {
       choices[active].removeAttribute("aria-current");
       slides[index].hidden = false;
       choices[index].setAttribute("aria-current", "true");
-      counter!.textContent = String(index + 1).padStart(2, "0");
       announcement!.textContent = `${slides[index].querySelector("h3")?.textContent}, ${index + 1} of ${slides.length}`;
       projectIndex?.scrollTo({ left: choices[index].offsetLeft - projectIndex.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
       if (focusWasInside) slides[index].querySelector<HTMLAnchorElement>(".project-links a")?.focus();

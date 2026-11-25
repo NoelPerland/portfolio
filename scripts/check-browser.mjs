@@ -49,7 +49,7 @@ try {
     for (const [width, height] of [[1366,768],[1920,1080],[390,844],[360,640],[844,390]]) {
       await home.setViewportSize({width,height});
       await home.goto(base);
-      assert.deepEqual((await home.locator('.project-index button').allTextContents()).map(text => text.replace(/^\d+\s*/, '')), ['Forma Studio','GamePulse','Minute to Action','Reply Desk','GameHub','Calorie Tracker']);
+      assert.deepEqual(await home.locator('.project-index button').allTextContents(), ['Forma Studio','GamePulse','Minute to Action','Reply Desk','GameHub','Calorie Tracker']);
       await home.locator('.project-index button').nth(3).click();
       assert.equal(await home.locator('.work:not([hidden]) .project-preview-link').getAttribute('href'), 'https://support-desk-ai-gules.vercel.app/');
       await home.locator('.theme-toggle').click();
@@ -63,13 +63,13 @@ try {
           const slide=home.locator('.work:not([hidden])');
           assert.equal(await slide.count(),1);
           await slide.locator('img').evaluate(img => img.decode());
-          assert.equal(await home.locator('#slide-current').innerText(),String(i+1).padStart(2,'0'));
+          assert.equal(await home.locator('.project-index button').nth(i).getAttribute('aria-current'),'true');
         }
         await home.getByRole('button',{name:'Next project',exact:true}).click();
-        assert.equal(await home.locator('#slide-current').innerText(),'01','Gallery wraps');
+        assert.equal(await home.locator('.project-index button').first().getAttribute('aria-current'),'true','Gallery wraps');
         await home.locator('.project-index button').first().focus();
         await home.keyboard.press('ArrowLeft');
-        assert.equal(await home.locator('#slide-current').innerText(),'06','Keyboard navigation wraps');
+        assert.equal(await home.locator('.project-index button').last().getAttribute('aria-current'),'true','Keyboard navigation wraps');
         for(let i=0;i<3;i++) {
           await home.locator('.skills-index button').nth(i).click();
           assert.equal(await home.locator('.skill-slide:not([hidden])').count(),1);
