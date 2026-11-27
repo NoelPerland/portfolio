@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${reading.variable} ${mono.variable} ${body.variable} ${heading.variable}`} suppressHydrationWarning>
-      <head><script dangerouslySetInnerHTML={{ __html: `try{document.documentElement.dataset.theme=(localStorage.getItem('portfolio2-theme')??localStorage.getItem('np-theme'))==='dark'?'dark':'light'}catch{}` }} /></head>
+      <head><script dangerouslySetInnerHTML={{ __html: `(()=>{let saved;try{saved=localStorage.getItem('portfolio2-theme')??localStorage.getItem('np-theme')}catch{}document.documentElement.dataset.theme=saved==='dark'||saved==='light'?saved:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'})()` }} /></head>
       <body>{children}</body>
     </html>
   );

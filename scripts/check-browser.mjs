@@ -57,6 +57,24 @@ try {
       assert.equal(await home.locator('html').getAttribute('data-theme'), 'dark', 'Saved theme survives reload');
       for (const theme of ['dark','light']) {
         if (theme === 'light') await home.locator('.theme-toggle').click();
+        await home.mouse.move(0, 0);
+        assert.equal(await home.locator('.theme-toggle').getAttribute('aria-label'), `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+        assert(await home.locator(theme === 'dark' ? '.sun-icon' : '.moon-icon').isVisible(), 'Icon describes the destination theme');
+        const surfaces = await home.evaluate(() => {
+          const luminance = color => {
+            const rgb = color.match(/[\d.]+/g).slice(0,3).map(Number).map(v => v / 255).map(v => v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4);
+            return .2126 * rgb[0] + .7152 * rgb[1] + .0722 * rgb[2];
+          };
+          return ['.site-nav','.hero','.portfolio-about','.skills-section','.skills-carousel','footer'].map(selector => {
+            const style = getComputedStyle(document.querySelector('.original-portfolio ' + selector));
+            const bg = luminance(style.backgroundColor), fg = luminance(style.color);
+            return {selector, bg, contrast:(Math.max(bg,fg)+.05)/(Math.min(bg,fg)+.05)};
+          });
+        });
+        for (const surface of surfaces) {
+          assert(surface.contrast >= 4.5, `${theme} ${surface.selector} text contrast`);
+          if (theme === 'dark') assert(surface.bg < .08, `${surface.selector} stays dark instead of inverting to white`);
+        }
         assert(await home.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'No horizontal page overflow');
         for (let i=0;i<6;i++) {
           await home.locator('.project-index button').nth(i).click();
@@ -99,6 +117,19 @@ try {
     const storagePage=await blocked.newPage();await storagePage.goto(base);await storagePage.locator('.theme-toggle').click();assert.equal(await storagePage.locator('html').getAttribute('data-theme'),'dark');await blocked.close();
     const early=await browser.newContext();await early.addInitScript(()=>localStorage.setItem('portfolio2-theme','dark'));
     const earlyPage=await early.newPage();await earlyPage.route('**/*.js*',route=>route.abort());await earlyPage.goto(base);assert.equal(await earlyPage.locator('html').getAttribute('data-theme'),'dark','Saved theme applies before React loads');await early.close();
+    const system=await browser.newContext({colorScheme:'dark'});
+    const systemPage=await system.newPage();await systemPage.goto(base);
+    assert.equal(await systemPage.locator('html').getAttribute('data-theme'),'dark','Fresh visits follow system preference');
+    assert.equal(await systemPage.evaluate(()=>localStorage.getItem('portfolio2-theme')),null,'System default is not saved as an explicit choice');
+    await systemPage.emulateMedia({colorScheme:'light'});
+    await systemPage.waitForFunction(()=>document.documentElement.dataset.theme==='light');
+    await systemPage.locator('.theme-toggle').click();
+    await systemPage.emulateMedia({colorScheme:'dark'});
+    await systemPage.emulateMedia({colorScheme:'light'});
+    assert.equal(await systemPage.locator('html').getAttribute('data-theme'),'dark','Explicit choice overrides later system changes');
+    await systemPage.goto(base+'/work/gamepulse');
+    assert.equal(await systemPage.locator('html').getAttribute('data-theme'),'dark','Theme survives navigation to build notes');
+    await system.close();
     await home.emulateMedia({reducedMotion:'reduce'});await home.goto(base);
     assert.equal(await home.locator('html').evaluate(el=>getComputedStyle(el).scrollBehavior),'auto');
     assert.deepEqual(homeErrors,[]);assert.deepEqual(externalFonts,[],'Fonts are served from the portfolio');

@@ -12,21 +12,30 @@ export default function OriginalTheme() {
       const label = `Switch to ${theme === "dark" ? "light" : "dark"} mode`;
       toggle?.setAttribute("aria-label", label);
       toggle?.setAttribute("title", label);
-      try {
-        localStorage.setItem("portfolio2-theme", theme);
-      } catch {
-        // Theme still works when browser storage is unavailable.
-      }
     };
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
     let saved: string | null = null;
     try {
       saved = localStorage.getItem("portfolio2-theme") ?? localStorage.getItem("np-theme");
     } catch {
-      // Default to the original light theme.
+      // Fall back to the system preference when storage is unavailable.
     }
-    setTheme(saved === "dark" ? "dark" : "light");
-    const changeTheme = () =>
-      setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+    let followsSystem = saved !== "dark" && saved !== "light";
+    setTheme(saved === "dark" || saved === "light" ? saved : systemTheme.matches ? "dark" : "light");
+    const onSystemTheme = () => {
+      if (followsSystem) setTheme(systemTheme.matches ? "dark" : "light");
+    };
+    const changeTheme = () => {
+      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      followsSystem = false;
+      setTheme(next);
+      try {
+        localStorage.setItem("portfolio2-theme", next);
+      } catch {
+        // The explicit choice still works in this page without storage.
+      }
+    };
+    systemTheme.addEventListener("change", onSystemTheme);
     toggle?.addEventListener("click", changeTheme);
     const workSection = document.querySelector<HTMLElement>(".original-portfolio .work-section");
     const carousel = workSection?.querySelector<HTMLElement>(".works");
@@ -110,6 +119,7 @@ export default function OriginalTheme() {
     skillCarousel?.addEventListener("touchstart", onSkillTouchStart, { passive: true });
     skillCarousel?.addEventListener("touchend", onSkillTouchEnd, { passive: true });
     return () => {
+      systemTheme.removeEventListener("change", onSystemTheme);
       toggle?.removeEventListener("click", changeTheme);
       choices.forEach(button => button.removeEventListener("click", onChoice));
       arrows.forEach(button => button.removeEventListener("click", onDirection));
